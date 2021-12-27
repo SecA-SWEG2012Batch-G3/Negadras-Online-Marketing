@@ -12,7 +12,7 @@ In doing that Negadras provides lots of things for the coustomers this are:
   
   
 
-![negaasd](https://user-images.githubusercontent.com/88226208/147436824-1d5495f8-9f3a-4604-a600-13abb8f439b7.jpg)
+![negaasd](https://user-images.githubusercontent.com/88226208/147436824-1d5495f8-9f3a-4604-a600-13abb8f439b7.jpg | height=400)
 
 Why Create Negadras?
 
