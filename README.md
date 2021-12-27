@@ -10,6 +10,8 @@ In doing that Negadras provides lots of things for the coustomers this are:
   
   3.DELIVERY: get you desired item with our fast delivery-system with fair price.
   
+  
+  ![plot](Resources/images/negaasd.jpg)
 
 Why Create Negadras?
 
