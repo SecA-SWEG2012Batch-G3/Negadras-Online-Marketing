@@ -8,7 +8,7 @@ In doing that Negadras provides lots of things for the coustomers this are:
   
   2.PROMOTION: customers either retailers or companies are able to promote their services or products using our website ad. Link.
   
-  3.DELIVERY: get you desired item with our fast delivery-system with fair price.
+  3.DELIVERY: get you desired item with our fast delivery-system with fair price. 
   
   ![](Negadras%20Assignment/Resources/images/600-13abb8f439b7.jpg)
 
