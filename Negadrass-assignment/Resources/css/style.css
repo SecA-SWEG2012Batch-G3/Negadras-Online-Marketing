@@ -27,6 +27,11 @@
     src: url(../fonts/ROGFontsv1.6-Regular.ttf);
 }
 
+@font-face {
+    font-family: Dejavu;
+    src: url(../fonts/DejaVuSans.ttf);
+}
+
 body {
     background-color: var(--primarycolor);
 }
