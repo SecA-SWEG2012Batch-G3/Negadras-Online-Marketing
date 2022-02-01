@@ -515,6 +515,7 @@ article:hover {
     font-family: Dejavu;
     font-size: 24px;
     color: var(--secondaryColor);
+    text-transform:uppercase;
 }
 
 .footer .mainFoot ul {
