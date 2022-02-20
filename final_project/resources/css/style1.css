@@ -1,0 +1,234 @@
+:root {
+	--primaryColor: #F4BB00;
+	--secondaryColor: #FFF;
+	--teritaryColor: #bde1ee;
+	--quaternaryColor: #FBE5BC;
+}
+body{
+	margin: 0;
+	padding: 0;
+	background: #ebf1ff;
+}
+h1{
+	font-family: Montserrat;
+}
+.primaryColor{
+	color: var(--primaryColor);
+}
+.primaryBg{
+	background: var(--primaryColor);
+}
+.primaryBorder{
+	border: 2px solid var(--primaryColor) !important;
+}
+.secondaryBorder{
+	border: 2px solid var(--secondaryColor) !important;
+}
+button{
+	background: white;
+	border: none;
+	padding: 10px;
+	padding-right: 18px;
+	padding-left: 18px;
+	cursor: pointer;
+	font-size: 16px;
+	margin: 3em 0;
+}
+.servicesLanding{
+	/* height: 100vh; */
+	/*background: #FFC3001C;*/
+	background: #FAC212;
+	width: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.showcase .showcase_top a {
+	color: #fff !important;
+  }
+
+.nav{
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	padding-top: 10px;
+	padding-bottom: 5px;
+}
+.nav .logo{
+	margin-left: 20px;
+}
+.nav div{
+	margin-top: 10px;
+	display: flex;
+}
+.searchBox{
+	height: 37px;
+	border:  none;
+	width: 200px;
+	border-radius: 15px 0 0 15px;
+	margin: 0px;
+	padding: 0px;
+}
+.searchButton{
+	margin-left: 0px;
+	height: 37px;
+	border-radius: 0 15px 15px 0;
+	padding: 0px;
+	border: none;
+	margin: 0px;
+	font-family: Montserrat;
+	font-size: 15px;
+	padding-right: 4px;
+	padding-left: 4px;
+	background: var(--primaryColor);
+	color:  var(--secondaryColor);
+}
+.links{
+	list-style: none;
+	margin-top: 10px;
+}
+.links li{
+	display: inline-block;
+	margin-left: 10px;
+}
+.links li a{
+	text-decoration: none;
+	color: var(--secondaryColor);
+	font-family: Montserrat;
+}
+.navContent{
+	display: flex;
+	justify-content: center;
+}
+.navContent img{
+	transform: rotateY(180deg);
+	height: 100vh;
+}
+.navContent div{
+	/* margin-top: 6vh; */
+	width: 60%;
+	/*margin-left: 100px;*/
+	/*color: #F4BB00;*/
+	color:  #FFF;
+	margin: 9em 0;
+}
+.navContent div h1{
+	font-size: 90px;
+	line-height: 91px;
+	/*font-family: "Recoleta Demo";*/
+	font-family: Montserrat;
+	font-weight: 900;
+	margin-bottom: 0.3em;
+}
+.navContent div p{
+	margin-top: 10px;
+	font-size: 20px;
+	line-height:21px;
+	font-family: montserrat;
+}
+.userIcon{
+	font-size: 22px !important;
+	margin-top: 10px;
+	color: var(--secondaryColor);
+}
+.aboutCont{
+	display: flex;
+	justify-content: space-between;
+	width: 90%;
+}
+.aboutCont div{
+	margin-top: 100px;
+	font-family: Montserrat;
+	overflow-x: hidden;
+	width: 90%;
+}
+
+.benefits_holder {
+	background: radial-gradient(#e6e4f0,#d3c9d9,#e6e4f0);
+}
+
+.Benefits{
+	width: 90%;
+	padding: 5%;
+	/* background: radial-gradient(#e6e4f0,#d3c9d9,#e6e4f0); */
+	display: flex;
+	/* justify-content: space-between; */
+	gap: 5%;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+.benefitsList {
+	/* display: inline-block; */
+	width: 355px;
+	/* margin-left: 20px; */
+	/* margin-right: 20px; */
+	/* margin-bottom: 25px; */
+	font-family: "Manrope";
+	margin: 2em auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.benefitsList img {
+	width: 40%;
+	margin: 1em auto;
+}
+
+.benefitsList h2 {
+	text-align: center;
+}
+
+.servicesLand{
+	font-family: Montserrat;
+	color: var(--primaryColor);
+}
+.servicesLand h1{
+	font-size: 90px;
+	line-height: 91px;
+	margin-bottom: 0px;
+}
+.servicesLand p{
+	width: 80%;
+	margin-left: 5%;
+}
+@media(max-width: 600px){
+	*{
+		text-align: center;
+	}
+	.servicesLanding{
+		margin-top: 0px;
+	}
+	.navContent{
+		padding-top: 2.1em;
+	}
+	.navContent div{
+		margin-top: 0px;
+	}
+	.navContent div h1{
+		margin-top: 0px;
+		width: 100%;
+		font-size: 70px;
+		line-height: 71px;
+		padding-top: 75px;
+	}
+	.navContent div p{
+		width: 100%;
+	}
+	.aboutCont{
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.aboutCont div{
+		margin-left: 5%;
+		width: 85%;
+	}
+
+	.navContent div{
+		width: 90%;
+		/* margin: 0; */
+	}
+}
