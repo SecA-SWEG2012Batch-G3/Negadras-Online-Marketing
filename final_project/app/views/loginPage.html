@@ -3,6 +3,7 @@
     <head>
        <title>Login Form </title>
        <link rel="stylesheet" href="../../resources/css/login.css">
+       <script src="../../resources/js/login.js"></script>
     </head>
     <body>
         <div class="loginbox">
@@ -11,13 +12,14 @@
             </div>
             <div id="content">
                 <h1>Login Here</h1>
-                <form action="" >
+                <form action=""  class="login">
                     <p style="text-align: left;">Username</p>
-                    <input type="text" name="" placeholder="Enter username" >
-                    <span id="error"></span>
+                    <input type="text" name="" placeholder="Enter username" id="userName">
+                    <span id="userError"></span>
                     <p style="text-align: left;">Password</p>
-                    <input type="password" name="" placeholder="Enter password">
-                    <input type="submit" name="" value="Login"><br>
+                    <input type="password" name="" placeholder="Enter password" id="passWord">
+                    <span id="passwordError"></span>
+                    <a id="button1" onclick="validateLogin()">Log In</a><br><br>
                     <a onclick="forgetpsw()" style="cursor: pointer;">Forgot password?</a><br>
                     <a href="signup.html">Don't have an account? Sign up</a>
                 </form>
