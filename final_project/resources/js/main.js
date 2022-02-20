@@ -801,3 +801,8 @@ function login() {
 	}
 	transiti()
 }
+
+
+function gohome() {
+	window.location.href="./home-page.html"
+}
