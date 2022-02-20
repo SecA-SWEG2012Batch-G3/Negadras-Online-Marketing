@@ -825,7 +825,7 @@ function activateUser(user) {
 	elemen.innerHTML=`
 	  <div class="top_profile_bar" style="display: flex; justify-content: center; align-items: center; justify-content:flex-start;" >
 			<div class="profile_image" onclick="extendProfileMenu()">
-				<img src="../../photo_2022-02-05_09-47-36.jpg" alt="" style="cursor:pointer" >
+				<img src="../../resources/images/photo_2022-02-05_09-47-36.jpg" alt="" style="cursor:pointer" >
 			</div>
 			<h2 onclick="extendProfileMenu()" style="cursor:pointer" >${first} ${last}</h2>
 	  </div>
