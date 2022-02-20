@@ -665,7 +665,7 @@ function search_shrink() {
 }
 function search_extend() {
 	document.getElementById("search_txt").style.cssText=` width: 70vw;`
-	document.getElementById("search_txt_large").style.cssText=` width: 25vw;`
+	document.getElementById("search_txt_large").style.cssText=` width: 20vw;`
 	if (document.getElementById("search_txt_large").value != "") suggestion()
 }
 
@@ -805,4 +805,51 @@ function login() {
 
 function gohome() {
 	window.location.href="./home-page.html"
+}
+
+function checkLog() {
+	if (localStorage.getItem("loggedUser") === null) {
+		console.log("session empty")
+	}
+	else {
+		log=JSON.parse(localStorage.getItem("loggedUser"));
+		activateUser(log);
+	}
+}
+
+function activateUser(user) {
+	first=user.firstName
+	last=user.lastName
+	elemen=document.getElementById("logged_profile")
+	elemen.style.cssText=`background: #e6e4f0; flex-direction: column;`
+	elemen.innerHTML=`
+	  <div class="top_profile_bar" style="display: flex; justify-content: center; align-items: center; justify-content:flex-start;" >
+			<div class="profile_image" onclick="extendProfileMenu()">
+				<img src="../../photo_2022-02-05_09-47-36.jpg" alt="" style="cursor:pointer" >
+			</div>
+			<h2 onclick="extendProfileMenu()" style="cursor:pointer" >${first} ${last}</h2>
+	  </div>
+	`
+}
+
+function extendProfileMenu() {
+	elemen=document.getElementById("logged_profile")
+	elemen.style.cssText=`background: #e6e4f0; flex-direction: column;`
+	elemen.innerHTML+=`
+	<div class="top_profile_menu" id="profile_menu" onmouseleave="checkLog()">
+		<a href="./profile.html">Profile Page</a>
+		<span onclick="logOut()" style="cursor:pointer">Log Out</span>
+  </div>
+	`
+}
+
+function logOut() {
+	console.log("session cleared")
+	elemen=document.getElementById("logged_profile")
+	elemen.style.cssText=`background: none; flex-direction: row;`
+	elemen.innerHTML=`
+	<a href="./signup.html">Sign up</a>
+	 <a href="./loginPage.html">Log in</a>
+	`
+	window.localStorage.removeItem("loggedUser")
 }
