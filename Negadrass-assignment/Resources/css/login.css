@@ -1,0 +1,201 @@
+body {
+  background: #2c5364;
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  background-position: center;
+  font-family: "Montserrat";
+}
+.loginbox,
+.Signupbox {
+  width: 800px;
+  height: 70vh;
+  background: #f4bb09;
+  color: aliceblue;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+  padding: 70px 40px;
+  border-radius: 10px;
+  transition: 1s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.loginbox div img {
+  width: 28%;
+  border-radius: 50%;
+  margin-left: 35%;
+  margin-top: -30px !important;
+}
+
+h1 {
+  margin: 0;
+  padding: 0 0 3vh;
+  text-align: center;
+  font-size: 5vh;
+}
+.loginbox p {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  text-align: center;
+  font-size: 2vh;
+}
+.loginbox input {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.loginbox input[type="text"],
+input[type="password"],
+input[type="Email"],
+input[type="tel"] {
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  outline: none;
+  height: 4vh;
+  color: #fff;
+  font-size: 2vh;
+}
+.loginbox input[type="submit"] {
+  border: none;
+  outline: none;
+  height: 6vh;
+  background: #fff;
+  color: #f4bb09;
+  font-size: 2.8vh;
+  border-radius: 10px;
+  transition: 1s;
+  width: 40%;
+  margin-left: 29%;
+}
+.loginbox input[type="submit"]:hover {
+  cursor: pointer;
+  background: #f4bb09;
+  border: #fff solid;
+  color: #fff;
+}
+.loginbox a {
+  text-decoration: none;
+  font-size: 1.5vh;
+  color: #fff;
+  margin: 1vh;
+}
+.loginbox a:hover {
+  color: #333;
+}
+
+/* Sign up page */
+.Signupbox {
+  width: 800px;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.Signupbox div p{
+  /* margin-top: -70px; */
+  text-align: center;
+  font-size: 3.5em;
+  font-weight: bold;
+}
+.Signupbox p {
+  margin: 0;
+  padding: 0;
+}
+.Signupbox form {
+  margin-top: 2em;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.Signupbox input[type="text"],
+input[type="password"],
+input[type="Email"],
+input[type="tel"] {
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  outline: none;
+  height: 4vh;
+  color: #fff;
+  font-size: 2vh;
+  width: 100%;
+}
+.Signupbox button {
+  border: none;
+  outline: none;
+  height: 4vh;
+  width: 100%;
+  background: #fff;
+  color: #f4bb09;
+  font-size: 2vh;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+.Signupbox button:hover {
+  cursor: pointer;
+  background: #f4bb09;
+  border: #fff solid;
+  color: #fff;
+}
+.Signupbox a {
+    text-decoration: none;
+    font-size: 2vh;
+    color: #fff;
+  }
+  .Signupbox a:hover {
+    color: #333;
+  }
+/* #error,
+#error2,
+#error3,
+#error4,
+#error5
+{
+  display: block;
+  color: red
+  margin-bottom: 5px;
+}
+#name,
+#lastName,
+#email,
+#Phone,
+#password
+{
+    border-bottom: 3px solid red; 
+    color: red
+} */
+
+.menu {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 2vh;
+  transform: translateY(60%);
+}
+
+.menu ul {
+  list-style: none;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.menu ul li {
+  display: inline-block;
+  /* margin: 1%; */
+}
+
+.menu ul li a {
+  font-size: 1.5vh;
+  text-transform: uppercase;
+}
+
