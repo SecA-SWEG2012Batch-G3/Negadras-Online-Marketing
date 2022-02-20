@@ -1,0 +1,166 @@
+body {
+  background: #2c5364;
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  background-position: center;
+  font-family: "Montserrat";
+}
+.loginbox,
+.Signupbox {
+  width: 320px;
+  height: 450px;
+  background: #f4bb09;
+  color: aliceblue;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+  padding: 70px 40px;
+  border-radius: 10px;
+  transition: 1s;
+}
+.loginbox div img {
+  width: 28%;
+  border-radius: 50%;
+  margin-left: 35%;
+  margin-top: -30px !important;
+}
+
+h1 {
+  margin: 0;
+  padding: 0 0 20px;
+  text-align: center;
+  font-size: 25px;
+}
+.loginbox p {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  text-align: center;
+}
+.loginbox input {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.loginbox input[type="text"],
+input[type="password"],
+input[type="Email"],
+input[type="tel"] {
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color: #fff;
+  font-size: 16px;
+}
+.loginbox input[type="submit"] {
+  border: none;
+  outline: none;
+  height: 40px;
+  background: #fff;
+  color: #f4bb09;
+  font-size: 18px;
+  border-radius: 10px;
+  transition: 1s;
+  width: 40%;
+  margin-left: 29%;
+}
+.loginbox input[type="submit"]:hover {
+  cursor: pointer;
+  background: #f4bb09;
+  border: #fff solid;
+  color: #fff;
+}
+.loginbox a {
+  text-decoration: none;
+  font-size: 12px;
+  color: #fff;
+}
+.loginbox a:hover {
+  color: #333;
+}
+
+/* Sign up page */
+.Signupbox {
+  width: 320px;
+  height: 570px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.Signupbox div p{
+  margin-top: -70px;
+  text-align: center;
+  font-size: 35px;
+  font-weight: bold;
+}
+.Signupbox p {
+  margin: 0;
+  padding: 0;
+}
+.Signupbox form {
+  margin-top: 10px;
+  width: 100%;
+}
+.Signupbox input[type="text"],
+input[type="password"],
+input[type="Email"],
+input[type="tel"] {
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color: #fff;
+  font-size: 16px;
+  width: 100%;
+}
+.Signupbox button {
+  border: none;
+  outline: none;
+  height: 40px;
+  width: 100%;
+  background: #fff;
+  color: #f4bb09;
+  font-size: 18px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+.Signupbox button:hover {
+  cursor: pointer;
+  background: #f4bb09;
+  border: #fff solid;
+  color: #fff;
+}
+.Signupbox a {
+    text-decoration: none;
+    font-size: 12px;
+    color: #fff;
+  }
+  .Signupbox a:hover {
+    color: #333;
+  }
+/* #error,
+#error2,
+#error3,
+#error4,
+#error5
+{
+  display: block;
+  color: red
+  margin-bottom: 5px;
+}
+#name,
+#lastName,
+#email,
+#Phone,
+#password
+{
+    border-bottom: 3px solid red; 
+    color: red
+} */
