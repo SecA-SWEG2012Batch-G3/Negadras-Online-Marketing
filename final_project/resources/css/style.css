@@ -1372,3 +1372,48 @@ article:hover {
     margin-left: -60px;*/
 }
 
+#logged_profile {
+    display: flex;
+    gap: 1em;
+    /* align-items: center; */
+    /* flex-direction: column; */
+    margin: 0 0.3em;
+    /* -------------- */
+    width: 35%;
+    /* background: #e6e4f0; */
+    border-radius: 2em;
+}
+
+#logged_profile .profile_image {
+    width: 3.5vw;
+    height: 3.5vw;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+#logged_profile .profile_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#logged_profile h2 {
+    color: #544000;
+    font-family: montserrat;
+    font-weight: 900;
+    font-size: 1.2vw;
+    margin: 0.1em;
+    text-transform: capitalize;
+}
+
+.top_profile_menu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    margin-top: 3vw;
+    margin-left: 3vw;
+    background: #e6e4f0bd;
+    padding: 1em;
+    border-radius: 0px 0px 10px 10px;
+    transition: 0.5s;
+}
