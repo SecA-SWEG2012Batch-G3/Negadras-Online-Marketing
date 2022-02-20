@@ -115,6 +115,7 @@ input[type="tel"] {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
 }
 .Signupbox input[type="text"],
 input[type="password"],
@@ -128,8 +129,10 @@ input[type="tel"] {
   color: #fff;
   font-size: 2vh;
   width: 100%;
+  transition: 0.5s;
+  /* transition-timing-function: ease-in-out; */
 }
-.Signupbox button {
+.Signupbox #button {
   border: none;
   outline: none;
   height: 4vh;
@@ -139,13 +142,41 @@ input[type="tel"] {
   font-size: 2vh;
   border-radius: 10px;
   margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: #fff solid;
 }
-.Signupbox button:hover {
+.Signupbox #button:hover {
   cursor: pointer;
   background: #f4bb09;
   border: #fff solid;
   color: #fff;
 }
+
+.login #button1 {
+  border: none;
+  outline: none;
+  height: 4vh;
+  width: 50%;
+  background: #fff;
+  color: #f4bb09;
+  font-size: 2vh;
+  border-radius: 10px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: #fff solid;
+  margin: 0 auto;
+}
+.login #button1:hover {
+  cursor: pointer;
+  background: #f4bb09;
+  border: #fff solid;
+  color: #fff;
+}
+
 .Signupbox a {
     text-decoration: none;
     font-size: 2vh;
@@ -199,3 +230,8 @@ input[type="tel"] {
   text-transform: uppercase;
 }
 
+.Signupbox span {
+  color: #e43838;
+  font-size: 1.5vh;
+  transition: 1s;
+}
