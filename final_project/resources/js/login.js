@@ -171,5 +171,6 @@ function User(firstName,lastName,phone,email,password){
         arr.push(obj);
         localStorage.setItem("user",JSON.stringify(arr));
         alert("success")
+        window.location.href="./loginPage.html"
       }
   }
