@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <title>Login Form </title>
+       <link rel="stylesheet" href="../../resources/css/login.css">
+    </head>
+    <body>
+        <div class="loginbox">
+            <div>
+              <img src="../../resources/images/user-32-240.png" alt="">
+            </div>
+            <div id="content">
+                <h1>Login Here</h1>
+                <form action="" >
+                    <p style="text-align: left;">Username</p>
+                    <input type="text" name="" placeholder="Enter username">
+                    <span id="error"></span>
+                    <p style="text-align: left;">Password</p>
+                    <input type="password" name="" placeholder="Enter password">
+                    <input type="submit" name="" value="Login"><br>
+                    <a onclick="forgetpsw()" style="cursor: pointer;">Forgot password?</a><br>
+                    <a href="signup.html">Don't have an account? Sign up</a>
+                </form>
+            </div>
+        </div>
+        <script>
+            function forgetpsw() {
+                var elem=document.getElementById("content")
+                var elem1=document.getElementsByClassName("loginbox")[0]
+                elem1.style.cssText=`width:60vw;`
+                elem.innerHTML=`
+                            <h1>Find Your Account</h1>
+                            <form action="">
+                                <p>Please enter your email or mobile number to search for your account.</p>
+                                <input type="text" name="" placeholder="Enter username or email" style="text-align:center">
+                                <span id="error"></span>
+                                <input type="submit" name="" value="Search"><br>
+                                <input type="submit" name="" value="cancel" onclick="login()"><br>
+                            </form>
+                `
+            }
+            function login() {
+                var elem=document.getElementById("content")
+                var elem1=document.getElementsByClassName("loginbox")[0]
+                elem1.style.cssText=`width:320px;`
+                elem.innerHTML=`
+                <h1>Login Here</h1>
+                <form action="" >
+                    <p style="text-align: left;">Username</p>
+                    <input type="text" name="" placeholder="Enter username">
+                    <span id="error"></span>
+                    <p style="text-align: left;">Password</p>
+                    <input type="password" name="" placeholder="Enter password">
+                    <input type="submit" name="" value="Login"><br>
+                    <a onclick="forgetpsw()" style="cursor: pointer;">Forgot password?</a><br>
+                    <a href="signup.html">Don't have an account? Sign up</a>
+                </form>
+                `
+            }
+        </script>
+    </body>
+</html>
