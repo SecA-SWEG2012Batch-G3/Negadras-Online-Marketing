@@ -622,7 +622,7 @@ function addToCart(obj){
 	        <div class="bar-1" style="background-color:rgb(${R}, ${G},${B})"></div>
 	        <div class="bar-2" style="background-color:rgb(${R}, ${G},${B})"></div>
 	      </div>
-	      <div class="product-item">    
+	      <div class="product-item">
 	          <div id="conta">
 	            <img src="${obj.image}" id="img">
 	          </div>
@@ -630,6 +630,7 @@ function addToCart(obj){
 	        <div class="product-detail" style="background-color:rgb(${R}, ${G},${B}); color: white; font-family: montserrat">
 	           <h3 class="card_top_heading" style="font-size: 25px; text-align:center;">Log in</h3>
 			   <form>
+
 					<div class="form-box">
 						<div class="row">
 							<div class="input-box" >
@@ -649,10 +650,14 @@ function addToCart(obj){
 							</div>
 						</div>
 					</div>
+
 				</form>
 	        </div>
+			
 	     </div>
+
 	   </div>
+
   </div>`;
 }
 
