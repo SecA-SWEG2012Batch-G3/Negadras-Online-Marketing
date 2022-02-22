@@ -22,7 +22,7 @@ function signUpFirstErr(){
         document.getElementById("name").style.cssText=`border-bottom: 2px solid #e43838a3; width:90%; `
         return false
     }
-    else{
+    else if(firstName!=""){
         document.getElementById("error").innerHTML = "";
         document.getElementById("name").style.cssText=`border-bottom: 1px solid #fff;`
         return true;
