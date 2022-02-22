@@ -515,8 +515,7 @@ function nextClick1(starts){
 	bottomNavs = document.getElementsByClassName("BottomNavs")[0];
 	bottomNavs.innerHTML="";
 	renderProducts(starts);
-}
-function viewDetail(obj){
+}function viewDetail(obj){
 	bod = document.body;
 	try{
 		elem = document.getElementById(obj.id.toString())
@@ -548,8 +547,11 @@ function viewDetail(obj){
 	           <h3>Price:- <b>${obj.price} birr</b></h3>
 	           <button class="order-btn" onclick="login()">Order Now</button>
 	        </div>
+			
 	     </div>
+
 	   </div>
+
   </div>`;
   cont = document.getElementById("conta");
 	cont.style.cssText="position: relative"
