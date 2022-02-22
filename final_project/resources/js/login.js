@@ -1,5 +1,4 @@
-
-  function LoginErrorUser(){
+ function LoginErrorUser(){
     var userErr = document.getElementById("userName").value;
     if(userErr==""){
         document.getElementById("userError").innerHTML = "please enter username";
