@@ -344,6 +344,17 @@ var users = [
 	},
 ]
 // console.log(Math.random(10))
+function nextClick1(starts){
+	curr=starts;
+	start=starts
+	end=starts+6;
+	console.log(start,",", end)
+	productContainer = document.getElementById("contain");
+	productContainer.innerHTML="";
+	bottomNavs = document.getElementsByClassName("BottomNavs")[0];
+	bottomNavs.innerHTML="";
+	renderProducts(starts);
+}
 var colors = ["#f9c830","#83a8dc","#7a4686","#76d9a2","#9bc538","#f5221d","#0f4b89","#0096c1","#3a4e5e","#e8011b"];
 var start=0
 var curr=1
