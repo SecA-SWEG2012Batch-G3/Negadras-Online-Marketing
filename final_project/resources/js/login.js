@@ -14,7 +14,7 @@ function LoginErrorPassword(){
     else
         document.getElementById("passwordError").innerHTML = "";
 }
-//  SignUp Page
+//  ---SignUp Page---
 function signUpFirstErr(){
     var firstName = document.getElementById("name").value;
     if(firstName==""){
