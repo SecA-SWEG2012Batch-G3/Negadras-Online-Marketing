@@ -70,12 +70,12 @@
             <div class="Edit_pro">
                 <div class="edit_form">
                     <h1>Edit profile</h1><br>
-                    <input type="text" name="" value="" placeholder="Firstname">
-                    <input type="text" name="" value="" placeholder="Lastname"><br>
-                    <input type="email" name="" value="" placeholder="Email">
-                    <input type="tel" name="" value="" placeholder="Phone"><br>
-                    <input type="password" name="" value="" placeholder="Password"><br>
-                    <input type="submit" name="" value="Update">
+                    <input type="text" name="" value="" placeholder="Firstname" id="fi">
+                    <input type="text" name="" value="" placeholder="Lastname" id="la"><br>
+                    <input type="email" name="" value="" placeholder="Email" id="em">
+                    <input type="tel" name="" value="" placeholder="Phone" id="tel"><br>
+                    <input type="password" name="" value="" placeholder="Password" id="pa"><br>
+                    <input type="submit" name="" value="Update" onclick="updatePro()">
                 </div>
             </div>
             <div class="Create_post displayNone">
@@ -101,7 +101,8 @@
         </div>
     </div>
 </body>
-<script type="text/javascript" src="../../resources/js/main.js">
+<script type="text/javascript" src="../../resources/js/main.js"></script>
+<script type="text/javascript">
     function toogleNavs(type){
     var editBut = document.getElementsByClassName("ebt")[0]
     var postBut = document.getElementsByClassName("crbt")[0]
@@ -119,6 +120,10 @@
         editBox.className="Edit_pro displayNone"
         postBox.className="Create_post displayBlock"
     }
+}
+var f = checkLog();
+if(!f){
+    window.location.href="./home-page.html"
 }
 </script>
 </html>
