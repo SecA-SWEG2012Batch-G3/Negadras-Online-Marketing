@@ -15,7 +15,7 @@ var products =[
 		rating:4,
 		image: "../../resources/images/C-2.png",
 		alt:"Black T-shirt",
-		desc:"H&M Quality T-shirt, with Different color and size choices",
+		desc:"H&M Quality T-shirt, with Different color and size choices order now to get",
 	},
 	{
 		id: 3,
