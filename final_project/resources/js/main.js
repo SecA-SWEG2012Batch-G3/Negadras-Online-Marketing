@@ -514,6 +514,17 @@ function getAverageColor(imageElement, ratio) {
         B
     }
 }
+function nextClick1(starts){
+	curr=starts;
+	start=starts
+	end=starts+6;
+	console.log(start,",", end)
+	productContainer = document.getElementById("contain");
+	productContainer.innerHTML="";
+	bottomNavs = document.getElementsByClassName("BottomNavs")[0];
+	bottomNavs.innerHTML="";
+	renderProducts(starts);
+}
 function viewDetail(obj){
 	bod = document.body;
 	try{
