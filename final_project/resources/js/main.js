@@ -24,7 +24,7 @@ var products =[
 		rating:5,
 		image: "../../resources/images/C-3.png",
 		alt:"Women's jacket",
-		desc:"Brand new Fashion Women's jacket, with Different color and size choices",
+		desc:"Brand new Fashion Women's jacket, with Different color and size choices order now to get",
 	},
 	{
 		id: 4,
