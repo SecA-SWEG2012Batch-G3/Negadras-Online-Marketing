@@ -1,13 +1,5 @@
 var products =[
-	{
-		id: 1,
-		name: "Armani shirt",
-		price:1500,
-		rating:3,
-		image: "../../resources/images/C-1.png",
-		alt:"Blue shirt",
-		desc:"Quality Men Armani shirt, with Different color and size choices",
-	},
+	
 	{
 		id: 2,
 		name: "H&M Women's T-shirt",
