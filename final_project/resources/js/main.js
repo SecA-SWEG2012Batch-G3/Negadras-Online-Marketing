@@ -69,7 +69,7 @@ var products =[
 		rating:2,
 		image: "../../resources/images/C-8.png",
 		alt:"",
-		desc:"Mens Quality T-shirt, with Different color and size choices",
+		desc:"Mens Quality T-shirt, with Different color and size choices order now to get",
 	},
 	{
 		id: 9,
