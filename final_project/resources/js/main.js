@@ -1,5 +1,5 @@
 var products =[
-         {
+	{
 		id: 1,
 		name: "Armani shirt",
 		price:1500,
@@ -15,7 +15,7 @@ var products =[
 		rating:4,
 		image: "../../resources/images/C-2.png",
 		alt:"Black T-shirt",
-		desc:"H&M Quality T-shirt, with Different color and size choices order now to get",
+		desc:"H&M Quality T-shirt, with Different color and size choices order now to get this product online",
 	},
 	{
 		id: 3,
@@ -24,7 +24,7 @@ var products =[
 		rating:5,
 		image: "../../resources/images/C-3.png",
 		alt:"Women's jacket",
-		desc:"Brand new Fashion Women's jacket, with Different color and size choices order now to get",
+		desc:"Brand new Fashion Women's jacket, with Different color and size choices order now to get this product online",
 	},
 	{
 		id: 4,
@@ -33,7 +33,7 @@ var products =[
 		rating:4,
 		image: "../../resources/images/C-4.png",
 		alt:"Blue nike shoes",
-		desc:"Original Nick Mens Running shoes, with Multiple size choices order now to get",
+		desc:"Original Nick Mens Running shoes, with Multiple size choices order now to get this product online",
 	},
 	{
 		id: 5,
@@ -42,7 +42,7 @@ var products =[
 		rating:4,
 		image: "../../resources/images/C-5.png",
 		alt:"Blue jacket",
-		desc:"Original Armani Men jacket, with Different color and size choices order now to get",
+		desc:"Original Armani Men jacket, with Different color and size choices order now to get this product online",
 	},
 	{
 		id: 6,
@@ -51,7 +51,7 @@ var products =[
 		rating:1,
 		image: "../../resources/images/C-6.png",
 		alt:"Black hill shoe",
-		desc:"Brand New Fashion Ladys Dinner Shoes, with multiple sizes order now to get",
+		desc:"Brand New Fashion Ladys Dinner Shoes, with multiple sizes order now to get this product online",
 	},
 	{
 		id: 7,
@@ -60,7 +60,7 @@ var products =[
 		rating:5,
 		image: "../../resources/images/C-7.png",
 		alt:"Nike running shoes",
-		desc:"Original Nick Mens Running shoes, with Multiple size choices order now to get",
+		desc:"Original Nick Mens Running shoes, with Multiple size choices order now to get this product online",
 	},
 	{
 		id: 8,
@@ -69,7 +69,7 @@ var products =[
 		rating:2,
 		image: "../../resources/images/C-8.png",
 		alt:"",
-		desc:"Mens Quality T-shirt, with Different color and size choices order now to get",
+		desc:"Mens Quality T-shirt, with Different color and size choices order now to get this product online",
 	},
 	{
 		id: 9,
@@ -78,7 +78,7 @@ var products =[
 		rating:3,
 		image: "../../resources/images/C-9.png",
 		alt:"",
-		desc:"Original Confortable Mens Jacket, with Different Size Avilable",
+		desc:"Original Confortable Mens Jacket, with Different Size Avilable order now to get this product online",
 	},
 	{
 		id: 10,
@@ -87,7 +87,7 @@ var products =[
 		rating:5,
 		image: "../../resources/images/C-10.png",
 		alt:"",
-		desc:"Fashion Jeans Mens Jacket, with Different color and size choices",
+		desc:"Fashion Jeans Mens Jacket, with Different color and size choices order now to get this product online",
 	},
 	{
 		id: 11,
@@ -96,7 +96,7 @@ var products =[
 		rating:3,
 		image: "../../resources/images/C-11.png",
 		alt:"Black tshirt",
-		desc:"Fashion Mens Quality T-shirt, with Different color and size choices",
+		desc:"Fashion Mens Quality T-shirt, with Different color and size choices order now to get this product online",
 	},
 	{
 		id: 12,
@@ -105,7 +105,7 @@ var products =[
 		rating:4,
 		image: "../../resources/images/C-12.png",
 		alt:"Red jacket",
-		desc:"Brand New Addidas jacket, with Different color and size choices",
+		desc:"Brand New Addidas jacket, with Different color and size choices order now to get this product online",
 	},
 	{
 		id: 13,
@@ -114,7 +114,7 @@ var products =[
 		rating:3,
 		image: "../../resources/images/E-1.png",
 		alt:"",
-		desc:"Orginal Gaming Computer Mouse For Gamers and Office uses",
+		desc:"Orginal Gaming Computer Mouse For Gamers and Office uses order now to get this product online",
 	},
 	{
 		id: 14,
@@ -123,7 +123,7 @@ var products =[
 		rating:3,
 		image: "../../resources/images/E-2.png",
 		alt:"",
-		desc:"HD high Quality professional Nikon Camera",
+		desc:"HD high Quality professional Nikon Camera order now to get this product online",
 	},
 	{
 		id: 15,
@@ -132,7 +132,7 @@ var products =[
 		rating:4,
 		image: "../../resources/images/E-3.png",
 		alt:"",
-		desc:"Digital Brand New Home and Office Air Conditioner",
+		desc:"Digital Brand New Home and Office Air Conditioner order now to get this product online",
 	},
 	{
 		id: 16,
@@ -141,7 +141,7 @@ var products =[
 		rating:3,
 		image: "../../resources/images/E-4.png",
 		alt:"",
-		desc:"Sandisk Original flash drive with different sizes",
+		desc:"Sandisk Original flash drive with different sizes order now to get this product online",
 	},
 	{
 		id: 17,
@@ -150,7 +150,7 @@ var products =[
 		rating:2,
 		image: "../../resources/images/E-5.png",
 		alt:"",
-		desc:"Lenove Mini Tablet with Different Color Choice and Storage sizes",
+		desc:"Lenove Mini Tablet with Different Color Choice and Storage sizes order now to get this product online",
 	},
 	{
 		id: 18,
@@ -159,7 +159,7 @@ var products =[
 		rating:4,
 		image: "../../resources/images/E-6.png",
 		alt:"",
-		desc:"High Quality Ladies Original Pink Beats Headset",
+		desc:"High Quality Ladies Original Pink Beats Headset order now to get this product online",
 	},
 	{
 		id: 19,
@@ -168,7 +168,7 @@ var products =[
 		rating:5,
 		image: "../../resources/images/E-7.png",
 		alt:"",
-		desc:"High Quality Original Beat Headset Studio Edition",
+		desc:"High Quality Original Beat Headset Studio Edition order now to get this product online",
 	},
 	{
 		id: 20,
@@ -177,7 +177,7 @@ var products =[
 		rating:4,
 		image: "../../resources/images/E-8.png",
 		alt:"",
-		desc:"HighTech Brand new Drone with Hd quality For Video Production",
+		desc:"HighTech Brand new Drone with Hd quality For Video Production order now to get this product online",
 	},
 	{
 		id: 21,
@@ -186,7 +186,7 @@ var products =[
 		rating:3,
 		image: "../../resources/images/E-9.png",
 		alt:"",
-		desc:"Brand new Samsung Smart Home Refregerator with Powersaving Functionality",
+		desc:"Brand new Samsung Smart Home Refregerator with Powersaving Functionality order now to get this product online",
 	},
 	{
 		id: 22,
@@ -195,7 +195,7 @@ var products =[
 		rating:4,
 		image: "../../resources/images/E-10.png",
 		alt:"",
-		desc:"Hp Pavilion Laptop, with Different Size and Performance choices",
+		desc:"Hp Pavilion Laptop, with Different Size and Performance choices order now to get this product online",
 	},
 	{
 		id: 23,
@@ -204,7 +204,7 @@ var products =[
 		rating:5,
 		image: "../../resources/images/E-11.png",
 		alt:"",
-		desc:"Red Iphone 7, with Different Storage Size",
+		desc:"Red Iphone 7, with Different Storage Size order now to get this product online",
 	},
 	{
 		id: 24,
@@ -213,7 +213,7 @@ var products =[
 		rating:3,
 		image: "../../resources/images/E-12.png",
 		alt:"",
-		desc:"High Quality Shock resistance Electric Boiler ",
+		desc:"High Quality Shock resistance Electric Boiler  order now to get this product online",
 	},
 	{
 		id: 25,
@@ -222,7 +222,7 @@ var products =[
 		rating:3,
 		image: "../../resources/images/G-1.png",
 		alt:"",
-		desc:"Everyday Healthy Fresh Vegetables to Eat Available",
+		desc:"Everyday Healthy Fresh Vegetables to Eat Available order now to get this product online",
 	},
 	{
 		id: 26,
@@ -231,7 +231,7 @@ var products =[
 		rating:3,
 		image: "../../resources/images/G-2.png",
 		alt:"",
-		desc:"Everyday Healthy Fresh Vegetables to Eat Available",
+		desc:"Everyday Healthy Fresh Vegetables to Eat Available order now to get this product online",
 	},
 	{
 		id: 27,
@@ -240,7 +240,7 @@ var products =[
 		rating:3,
 		image: "../../resources/images/G-3.png",
 		alt:"",
-		desc:"Everyday Healthy Fresh Vegetables to Eat Available",
+		desc:"Everyday Healthy Fresh Vegetables to Eat Available order now to get this product online",
 	},
 	{
 		id: 28,
@@ -249,7 +249,7 @@ var products =[
 		rating:3,
 		image: "../../resources/images/G-4.png",
 		alt:"",
-		desc:"Everyday Healthy Fresh Vegetables to Eat Available",
+		desc:"Everyday Healthy Fresh Vegetables to Eat Available order now to get this product online",
 	},
 	{
 		id: 29,
@@ -258,7 +258,7 @@ var products =[
 		rating:3,
 		image: "../../resources/images/G-5.png",
 		alt:"",
-		desc:"Everyday Healthy Fresh Vegetables to Eat Available",
+		desc:"Everyday Healthy Fresh Vegetables to Eat Available order now to get this product online",
 	},
 	{
 		id: 30,
@@ -267,7 +267,7 @@ var products =[
 		rating:3,
 		image: "../../resources/images/G-6.png",
 		alt:"",
-		desc:"Everyday Healthy Fresh Vegetables to Eat Available",
+		desc:"Everyday Healthy Fresh Vegetables to Eat Available order now to get this product online",
 	},
 	{
 		id: 31,
@@ -276,7 +276,7 @@ var products =[
 		rating:3,
 		image: "../../resources/images/G-7.png",
 		alt:"",
-		desc:"Everyday Healthy Fresh Vegetables to Eat Available",
+		desc:"Everyday Healthy Fresh Vegetables to Eat Available order now to get this product online",
 	},
 	{
 		id: 32,
@@ -285,7 +285,7 @@ var products =[
 		rating:3,
 		image: "../../resources/images/G-8.png",
 		alt:"",
-		desc:"Everyday Healthy Fresh Vegetables to Eat Available",
+		desc:"Everyday Healthy Fresh Vegetables to Eat Available order now to get this product online",
 	},
 	{
 		id: 33,
@@ -294,7 +294,7 @@ var products =[
 		rating:3,
 		image: "../../resources/images/G-9.png",
 		alt:"",
-		desc:"Everyday Healthy Fresh Vegetables to Eat Available",
+		desc:"Everyday Healthy Fresh Vegetables to Eat Available order now to get this product online",
 	},
 	{
 		id: 34,
@@ -303,7 +303,7 @@ var products =[
 		rating:3,
 		image: "../../resources/images/G-10.png",
 		alt:"",
-		desc:"Everyday Healthy Fresh Vegetables to Eat Available",
+		desc:"Everyday Healthy Fresh Vegetables to Eat Available order now to get this product online",
 	},
 	{
 		id: 35,
@@ -312,7 +312,7 @@ var products =[
 		rating:3,
 		image: "../../resources/images/G-11.png",
 		alt:"",
-		desc:"Everyday Healthy Fresh Vegetables to Eat Available",
+		desc:"Everyday Healthy Fresh Vegetables to Eat Available order now to get this product online",
 	},
 	{
 		id: 36,
@@ -321,16 +321,7 @@ var products =[
 		rating:3,
 		image: "../../resources/images/G-12.png",
 		alt:"",
-		desc:"Everyday Healthy Fresh Vegetables to Eat Available",
-	},
-	{
-		id: 36,
-		name: "Cucumber",
-		price:20,
-		rating:3,
-		image: "../../resources/images/G-12.png",
-		alt:"",
-		desc:"Everyday Healthy Fresh Vegetables to Eat Available",
+		desc:"Everyday Healthy Fresh Vegetables to Eat Available order now to get this product online",
 	},
 ]
 var users = [
