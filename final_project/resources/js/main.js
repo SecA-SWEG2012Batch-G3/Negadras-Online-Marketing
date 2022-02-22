@@ -42,7 +42,7 @@ var products =[
 		rating:4,
 		image: "../../resources/images/C-5.png",
 		alt:"Blue jacket",
-		desc:"Original Armani Men jacket, with Different color and size choices",
+		desc:"Original Armani Men jacket, with Different color and size choices order now to get",
 	},
 	{
 		id: 6,
