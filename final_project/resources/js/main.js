@@ -60,7 +60,7 @@ var products =[
 		rating:5,
 		image: "../../resources/images/C-7.png",
 		alt:"Nike running shoes",
-		desc:"Original Nick Mens Running shoes, with Multiple size choices",
+		desc:"Original Nick Mens Running shoes, with Multiple size choices order now to get",
 	},
 	{
 		id: 8,
