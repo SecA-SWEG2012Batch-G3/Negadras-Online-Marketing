@@ -51,7 +51,7 @@ var products =[
 		rating:1,
 		image: "../../resources/images/C-6.png",
 		alt:"Black hill shoe",
-		desc:"Brand New Fashion Ladys Dinner Shoes, with multiple sizes",
+		desc:"Brand New Fashion Ladys Dinner Shoes, with multiple sizes order now to get",
 	},
 	{
 		id: 7,
