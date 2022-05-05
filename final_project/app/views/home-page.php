@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../resources/css/style.css">
+    <title>home page</title>
+</head>
+<body onload="checkLog()">
+    <header class="showcase">
+        <div class="showcase_top">
+            <div class="left">
+                <img src="../../resources/images/logo/logo_01.png" alt="logo" class="log" onclick="gohome()" style="cursor:pointer">
+                <img src="../../resources/images/logo/logo_small.png" alt="logo" class="log_s" onclick="gohome()" style="cursor:pointer">
+                <div class="navs">
+                    <ul class="nav_list">
+                    <div class="home"><li><a href="./home-page.html">Home</a></li></div>
+                    <div class="services"><li><a href="./services.html">Services</a></li></div>
+                    <div class="about_us"><li><a href="./about.html">About us</a></li></div>
+                    <div class="home"><li><a href="./contact.html">Contact us</a></li></div>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <div class="search">
+                    <div class="search-box" onmouseover="search_extend()" onmouseleave="search_shrink()" onkeyup="suggestion_small()">
+                        <input id="search_txt" class="search-txt" type="text" name="" placeholder="Type to search">
+                        <a class="search-btn" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="search-svg" fill="#fcc415"><path   d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg></a>
+                    </div>
+                    <div class="suggestion_box" ></div>
+                </div>
+            </div>
+            <div class="right">
+                <ul>
+                    <li>
+                        <div class="search-box" onmouseover="search_extend()" onmouseleave="search_shrink()" onkeyup="suggestion()">
+                            <input id="search_txt_large" class="search-txt" type="text" name="" placeholder="Type to search">
+                            <a class="search-btn" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="search-svg" fill="#fcc415"><path   d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg></a>
+                        </div>
+                        <div class="suggestion_box" id="sugg_box"></div>
+                    </li>
+                    
+                </ul>
+                <div id="logged_profile">
+                    <a href="./signup.html">Sign up</a>
+                    <a href="./loginPage.html">Log in</a>
+                </div>
+            </div>
+        </div>
+        <div class="showcase_content">
+            <div class="left">
+                <img src="../../resources/images/neg.png" alt="" class="small_landing">
+                <h1>QUALITY PRODUCT WITH <span>AFFORDABLE</span> PRICE</h1>
+                <p>Negadras Shopping is e-commerce platform which is based in Ethiopia, providing quality goods at an affordable price.
+                </p>
+                <a href="./About.html" class="btn_learn">learn more</a>
+            </div>
+            <div class="right">
+                <h2><span>Shop</span> Easy, <span>Save</span> Time</h2>
+                <img src="../../resources/images/image_01.png" alt="">
+            </div>
+        </div>
+    </header>
+    <section class="tabs-grid">
+        <article class="clothes grid-span-2">
+            <h1>clothes</h1>
+            <p>High quality for best price</p>
+            <div class="img-slider">
+                <div class="slider-container">
+                    
+                    <div class="slide">
+                    <img src="../../resources/images/C-5.png">
+                    </div>
+                    
+                    <div class="slide">
+                    <img src="../../resources/images/C-12.png">
+                    </div>
+                
+                    <div class="slide">
+                    <img src="../../resources/images/C-8.png">
+                    </div>
+                    
+                </div>
+            </div>
+        </article>
+        <article class="electronics">
+            <h1>Electronics</h1>
+            <p>High quality for best price</p>
+            <div class="img-slider">
+                <div class="slider-container">
+                    
+                    <div class="slide">
+                    <img src="../../resources/images/E-7.png">
+                    </div>
+                    
+                    <div class="slide">
+                    <img src="../../resources/images/E-10.png">
+                    </div>
+                
+                    <div class="slide">
+                    <img src="../../resources/images/gaming.png">
+                    </div>
+                    
+                </div>
+            </div>
+        </article>
+        <article class="groceries">
+            <h1>Groceries</h1>
+            <p>High quality for best price</p>
+            <div class="img-slider">
+                <div class="slider-container">
+                    
+                    <div class="slide">
+                    <img src="../../resources/images/G-4.png">
+                    </div>
+                    
+                    <div class="slide">
+                    <img src="../../resources/images/G-9.png">
+                    </div>
+                
+                    <div class="slide">
+                    <img src="../../resources/images/G-6.png">
+                    </div>
+                    
+                </div>
+            </div>
+        </article>
+        <article class="accessories grid-span-2">
+            <h1>Accessories</h1>
+            <p>High quality for best price</p>
+            <div class="img-slider">
+                <div class="slider-container">
+                    
+                    <div class="slide">
+                    <img src="../../resources/images/E-2.png">
+                    </div>
+                    
+                    <div class="slide">
+                    <img src="../../resources/images/console-game-accessory-royale-controller-fortnite-battle.png">
+                    </div>
+                
+                    <div class="slide">
+                    <img src="../../resources/images/E-4.png">
+                    </div>
+                    
+                </div>
+            </div>
+        </article>
+    </section>
+    <div class="featured">
+        <div class="img-slider">
+            <div class="slider-container">
+                
+                <div class="slide">
+                    <div class="featured_1">
+                        <div class="left">
+                            <img src="../../resources/images/console-game-accessory-royale-controller-fortnite-battle.png" alt="game-pad">
+                        </div> 
+                        <div class="right">
+                            <h2>Exclusively avaliable on redstone</h2>
+                            <h1>Sony dual-shock 4</h1>
+                            <p>The sony dual-shock 4 features touch-pad for use with pc with windows environment and adustable vibration with haptic feedback</p>
+                            <a href="#abt_us" class="btn_buy">Buy now</a>
+                        </div>      
+                    </div>
+                </div>
+                
+                <div class="slide">
+                    <div class="featured_1">
+                        <div class="left">
+                            <img src="../../resources/images/s10.png" alt="game-pad" class="img_02">
+                        </div> 
+                        <div class="right">
+                            <h2>Exclusively avaliable on samsung</h2>
+                            <h1>Galaxy s10/ s10+</h1>
+                            <p>The samsung Galaxy S10/+ features touch-pad for use with pc with windows environment and adustable vibration with haptic feedback</p>
+                            <a href="#abt_us" class="btn_buy">Buy now</a>
+                        </div>      
+                    </div>
+                </div>
+            
+                <div class="slide">
+                    <div class="featured_1">
+                        <div class="left">
+                            <img src="../../resources/images/legion.png" alt="game-pad" class="img_03">
+                        </div> 
+                        <div class="right">
+                            <h2>Exclusively avaliable on redstone</h2>
+                            <h1>Legion 5</h1>
+                            <p>The lenovo legion 5 features touch-pad for use with pc with windows environment and adustable vibration with haptic feedback</p>
+                            <a href="#abt_us" class="btn_buy">Buy now</a>
+                        </div>      
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="container" id="contain">
+    </div>
+    <footer class="footer">
+        <div class="mainFoot">
+            <div class="discrip">
+                <img src="../../resources/images/logo/logo_01.png" alt="" class="foot_logo" onclick="gohome()" style="cursor:pointer">
+            </div>
+            <div class="quick-link">
+                <h3> Quick links</h3>
+                <ul>
+                    <li><a href="./home-page.html">Home</a></li>
+                    <li><a href="./services.html">Services</a></li>
+                    <li><a href="./about.html">About us</a></li>
+                    <li><a href="./contact.html">Contact us</a></li>
+                    <li><a href="./loginPage.html">Log in</a></li>
+                    <li><a href="./signup.html">Sign up</a></li>
+                </ul>
+            </div>
+            <div class="contact">
+                <h3>Contact us </h3>
+                <ul>
+                    <a href="tel:+251929627848"><li><div class="fa fa-phone"></div><h> &nbsp +251 929 627 848</h></li></a>
+                    <a href="mailto:negadras@gmail.com"><li><div class="fa fa-google"></div><h>  &nbsp negadras@gmail.com</h></li></a>
+                    <a href="#" target="blank"><li><div class="fa fa-location-arrow" ></div><h> &nbsp AASTU Block 12 Dorm 114  <br> &nbsp &nbsp &nbsp Addis Ababa, Ethiopia</h></li></a>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script>
+        
+    </script>
+</body>
+<script type="text/javascript" src="../../resources/js/main.js"></script>
+</html>
