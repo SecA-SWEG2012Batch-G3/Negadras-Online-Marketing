@@ -19,4 +19,4 @@ And the discovered problems were in having desired product in desired time plus 
 We took it upon ourselves to change that. We developed a burning desire to create something to bridge the chasms between businesses across user and companies . So, with a goal in mind, a skilled team at hand, Negadras the website that helps discover and build profitable long-lasting networks amongst businesses around the world.
 <img src="https://user-images.githubusercontent.com/88226208/147437105-dfb402d8-2049-47a1-9ca0-93e2bc5b4f5a.png" />
 
-<h1>Note: The commits are mostly from one account because we worked locally and pushed the project once and don't show our exact contribution on the project</h1>
+
