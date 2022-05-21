@@ -52,8 +52,10 @@
     </header>
     <div class="main-profile">
         <div class="profile-info-cont">
-            <div class="profile_pic">
-                <img src="../../Resources/images/bluetext12.png" height="200px" width="200px">
+            <div  class="profile_pic">
+                <div id="profilePhoto" class="ImageContainer" style="height: 100%;">
+                    
+                </div>
             </div>
         </div>
     </div>
@@ -70,22 +72,24 @@
             <div class="Edit_pro">
                 <div class="edit_form">
                     <h1>Edit profile</h1><br>
-                    <input type="text" name="" value="" placeholder="Firstname" id="fi">
-                    <input type="text" name="" value="" placeholder="Lastname" id="la"><br>
-                    <input type="email" name="" value="" placeholder="Email" id="em">
-                    <input type="tel" name="" value="" placeholder="Phone" id="tel"><br>
-                    <input type="password" name="" value="" placeholder="Password" id="pa"><br>
-                    <input type="submit" name="" value="Update" onclick="updatePro()">
+                    <input type="text" name="" value="" placeholder="Firstname">
+                    <input type="text" name="" value="" placeholder="Lastname"><br>
+                    <input type="email" name="" value="" placeholder="Email">
+                    <input type="tel" name="" value="" placeholder="Phone"><br>
+                    <input type="password" name="" value="" placeholder="Password"><br>
+                    <input type="submit" name="" value="Update">
                 </div>
             </div>
             <div class="Create_post displayNone">
                 <div class="create_form">
                     <h1>Post a product</h1><br>
-                    <input type="text" name="" value="" placeholder="Title">
-                    <input type="text" name="" value="" placeholder="Description"><br>
-                    <input type="number" name="" value="" placeholder="Price" min="0">
-                    <input type="file" name=""><br><br>
-                    <input type="submit" name="" value="Post">
+                    <form id="profileForm">
+                        <!-- <input type="text" name="title" value="" placeholder="Title">
+                        <input type="text" name="Description" value="" placeholder="Description"><br>
+                        <input type="number" name="Price" value="" placeholder="Price" min="0"> -->
+                        <input type="file" name="file" id="file"><br><br>
+                        <input type="submit" name="submit" value="Post">
+                    </form>
                 </div>
             </div>
             <div class="Cart_list">
@@ -120,10 +124,29 @@
         editBox.className="Edit_pro displayNone"
         postBox.className="Create_post displayBlock"
     }
+
+    const proForm = document.getElementById('profileForm');
+    const file = document.getElementById('file');
+
+    proForm.addEventListener( 'submit' , (e) => {
+        e.preventDefault();
+        const api = 'uploadProduct.php';
+        const data = new FormData();
+        console.log(file.files[0]);
+        data.append('file', file.files[0])
+        fetch(api, {
+            method: 'POST',
+            body: data
+        }).then(res => res.text()).then(response => console.log(response)).catch(error => console.error(error))
+    })
 }
-var f = checkLog();
-if(!f){
-    window.location.href="./home-page.html"
-}
+    function profileImage() {
+        var uid = (check_cookie_name("loginData")).uid
+        return `../../resources/usersData/${uid}/profile/profile.png`
+    }
+
+    var image = profileImage();
+
+    document.getElementById("profilePhoto").innerHTML=`<img src=${image} alt="profile" style="height: 100%; width: 100%; object-fit: cover;">`
 </script>
 </html>

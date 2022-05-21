@@ -836,11 +836,13 @@ function checkLog() {
 	if ((check_cookie_name("loginData")).exist) {
 		console.log("session in sequence")
 		activateUser(logData.uid,logData.firstname, logData.lastname)
+		return true;
 	}
 	else {
 		console.log("session empty")
 		// log=JSON.parse(localStorage.getItem("loggedUser"));
 		// activateUser(log);
+		return false
 	}
 }
 
@@ -881,4 +883,5 @@ function logOut() {
 	 <a href="./loginPage.html">Log in</a>
 	`
 	document.cookie = `loginData={}; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=../../; SameSite=None; secure`
+	window.location.href="./home-page.html"
 }

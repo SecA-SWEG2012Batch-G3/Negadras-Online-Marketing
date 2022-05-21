@@ -84,6 +84,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                 }
                 
                 else {
+                    copy("../../resources/usersData/default/profile.png", "../../resources/usersData/$uid/profile/profile.png");
                     $json["profile"] = false;
                 }
                 

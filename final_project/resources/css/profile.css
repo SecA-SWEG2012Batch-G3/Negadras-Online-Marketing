@@ -32,6 +32,8 @@
 	/*box-shadow: 0px 0px 100px -10px;*/
 	position: relative;
 	top: 60px;
+	overflow-y: hidden;
+	overflow-x: hidden;
 }
 .profile_det_cont{
 	display: flex;
