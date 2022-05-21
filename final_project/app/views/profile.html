@@ -84,10 +84,10 @@
                 <div class="create_form">
                     <h1>Post a product</h1><br>
                     <form id="profileForm">
-                        <!-- <input type="text" name="title" value="" placeholder="Title">
+                        <input type="text" name="title" value="" placeholder="Title">
                         <input type="text" name="Description" value="" placeholder="Description"><br>
-                        <input type="number" name="Price" value="" placeholder="Price" min="0"> -->
-                        <input type="file" name="file" id="file"><br><br>
+                        <input type="number" name="Price" value="" placeholder="Price" min="0">
+                        <!-- <input type="file" name="file" id="file"><br><br> -->
                         <input type="submit" name="submit" value="Post">
                     </form>
                 </div>
@@ -131,9 +131,9 @@
     proForm.addEventListener( 'submit' , (e) => {
         e.preventDefault();
         const api = 'uploadProduct.php';
-        const data = new FormData();
-        console.log(file.files[0]);
-        data.append('file', file.files[0])
+        const data = new FormData(proForm);
+        // console.log(file.files[0]);
+        // data.append('file', file.files[0])
         fetch(api, {
             method: 'POST',
             body: data
