@@ -135,7 +135,7 @@
 	.profile_detail_options{
 		margin-left: 7%;
 		width: 65%;
-		max-height: 700px;
+		max-height: 750px;
 		margin-top: -20px;
 		border-radius: 0 0;
 	}
@@ -197,6 +197,7 @@
 	align-items: center;
 	justify-content: center;
 	overflow: hidden;
+	flex-direction: column;
   }
   .wrapper.active{
 	border: none;
@@ -248,7 +249,8 @@
 	font-size: 18px;
 	color: #fff;
 	display: none;
-	background: linear-gradient(135deg,#3a8ffe 0%,#9658fe 100%);
+	background: var(--suggestionBackg);
+	padding-left: 30px;
   }
   .wrapper.active:hover .file-name{
 	display: block;

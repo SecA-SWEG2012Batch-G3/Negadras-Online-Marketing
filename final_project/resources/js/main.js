@@ -830,25 +830,16 @@ function gohome() {
 }
 
 function checkLog() {
-	console.log("the following")
 	logData = (check_cookie_name("loginData"))
 	console.log(logData)
 	if ((check_cookie_name("loginData")).exist) {
-		console.log("session in sequence")
 		activateUser(logData.uid,logData.firstname, logData.lastname)
 		return true;
 	}
-	else {
-		console.log("session empty")
-		// log=JSON.parse(localStorage.getItem("loggedUser"));
-		// activateUser(log);
-		return false
-	}
+	else return false
 }
 
 function activateUser(uid,first, last) {
-	console.log(typeof(first))
-	console.log(typeof(last))
 	elemen=document.getElementById("logged_profile")
 	elemen.style.cssText=`background: #e6e4f0; flex-direction: column;`
 	elemen.innerHTML=`

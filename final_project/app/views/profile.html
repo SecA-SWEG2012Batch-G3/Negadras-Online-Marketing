@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../Resources/css/style.css">
     <link rel="stylesheet" href="../../Resources/css/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <title>Profile</title>
 </head>
 <body onload="checkLog()">
@@ -94,10 +95,10 @@
                         justify-content: center;
                         gap: 22px;
                       ">
-                            <input type="text" name="title" value="" placeholder="Title">
-                            <input type="text" name="Description" value="" placeholder="Description"><br>
-                            <input type="number" name="Price" value="" placeholder="Price" min="0">
-                            <!-- <input type="file" name="file" id="file"><br><br> -->
+                            <input id="input__1" type="text" name="title" value="" placeholder="Title">
+                            <input id="input__2" type="text" name="Description" value="" placeholder="Description"><br>
+                            <input id="input__3" type="number" name="Price" value="" placeholder="Price" min="0">
+                            <input type="number" name="userId" id="uid" style="display: none;"><br><br>
                             <input type="submit" name="submit" value="Post" style="
                             border-radius: var(--loginBorderRadus);
                             color: var(--loginSubmitColor);
@@ -111,28 +112,28 @@
                             height: 35px;">
                         </form>
                         <div class="container">
-                            <div class="wrapper">
-                              <div class="image">
-                                  <img src="" alt="">
-                              </div>
-                              <div class="content">
+                            <div id="bgPhoto" class="wrapper">
+                                <div id="cancel-btn" style="position: absolute; top: 0; right: 0; width: 10%; margin: 10px; z-index: 2;">
+                                    <?xml version="1.0" encoding="iso-8859-1"?><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 496 496" style="enable-background:new 0 0 496 496;" xml:space="preserve"><path style="fill:#B5092B94;" d="M496,248c0,136.8-111.2,248-248,248S0,384.8,0,248S111.2,0,248,0S496,111.2,496,248z"/><path style="fill:#89002700;" d="M248,0c136.8,0,248,111.2,248,248S384.8,496,248,496"/><path style="fill:#883549B5;" d="M72.8,72.8c96.8-96.8,253.6-96.8,350.4,0s96.8,253.6,0,350.4"/><g><path style="fill:#EEFFFF;" d="M321.6,333.6c-3.2,0-5.6-0.8-8-3.2l-148-148c-4.8-4.8-4.8-12,0-16.8s12-4.8,16.8,0l148,148 c4.8,4.8,4.8,12,0,16.8C328,332.8,324.8,333.6,321.6,333.6z"/><path style="fill:#EEFFFF;" d="M174.4,333.6c-3.2,0-5.6-0.8-8-3.2c-4.8-4.8-4.8-12,0-16.8l148-148c4.8-4.8,12-4.8,16.8,0 s4.8,12,0,16.8l-148.8,148C180,332.8,176.8,333.6,174.4,333.6z"/></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
+                               </div>
+                               <div class="image" id="imagePreview">
+                                  <img id="photoToBeUploaded" src="" alt="">
+                               </div>
+                               <div class="content">
                                   <div class="icon">
-                                    <i class="fas fa-cloud-upload-alt"></i>
                                   </div>
                                   <div class="text">
-                                    Upload Photo
+                                     No file chosen, yet!
                                   </div>
-                              </div>
-                              <div id="cancel-btn">
-                                  <i class="fas fa-times"></i>
-                              </div>
-                              <div class="file-name">
+                               </div>
+                               
+                               <div class="file-name">
                                   File name here
-                              </div>
+                               </div>
                             </div>
                             <button onclick="defaultBtnActive()" id="custom-btn">Choose a file</button>
-                            <input id="default-btn" name="file" type="file" hidden>
-                        </div>
+                            <input id="default-btn" type="file" hidden>
+                         </div>
                     </div>
                 </div>
             </div>
@@ -152,40 +153,26 @@
 <script type="text/javascript" src="../../resources/js/main.js"></script>
 <script type="text/javascript">
     function toogleNavs(type){
-    var editBut = document.getElementsByClassName("ebt")[0]
-    var postBut = document.getElementsByClassName("crbt")[0]
-    var editBox = document.getElementsByClassName("Edit_pro")[0]
-    var postBox = document.getElementsByClassName("Create_post")[0]
-    if(type=="edit"){
-        editBut.className="ebt active"
-        postBut.className="crbt"
-        editBox.className="Edit_pro displayBlock"
-        postBox.className="Create_post displayNone"
+        var editBut = document.getElementsByClassName("ebt")[0]
+        var postBut = document.getElementsByClassName("crbt")[0]
+        var editBox = document.getElementsByClassName("Edit_pro")[0]
+        var postBox = document.getElementsByClassName("Create_post")[0]
+        if(type=="edit"){
+            editBut.className="ebt active"
+            postBut.className="crbt"
+            editBox.className="Edit_pro displayBlock"
+            postBox.className="Create_post displayNone"
+        }
+        else if(type=="create_post"){
+            editBut.className="ebt"
+            postBut.className="crbt active"
+            editBox.className="Edit_pro displayNone"
+            postBox.className="Create_post displayBlock"
+        }
     }
-    else if(type=="create_post"){
-        editBut.className="ebt"
-        postBut.className="crbt active"
-        editBox.className="Edit_pro displayNone"
-        postBox.className="Create_post displayBlock"
-    }
-
-    const proForm = document.getElementById('profileForm');
-    const file = document.getElementById('file');
-
-    proForm.addEventListener( 'submit' , (e) => {
-        e.preventDefault();
-        const api = 'uploadProduct.php';
-        const data = new FormData(proForm);
-        // console.log(file.files[0]);
-        // data.append('file', file.files[0])
-        fetch(api, {
-            method: 'POST',
-            body: data
-        }).then(res => res.text()).then(response => console.log(response)).catch(error => console.error(error))
-    })
-}
+    var uid = "0"
     function profileImage() {
-        var uid = (check_cookie_name("loginData")).uid
+        uid = (check_cookie_name("loginData")).uid
         return `../../resources/usersData/${uid}/profile/profile.png`
     }
 
@@ -193,34 +180,76 @@
 
     document.getElementById("profilePhoto").innerHTML=`<img src=${image} alt="profile" style="height: 100%; width: 100%; object-fit: cover;">`
     const wrapper = document.querySelector(".wrapper");
-            const fileName = document.querySelector(".file-name");
-            const defaultBtn = document.querySelector("#default-btn");
-            const customBtn = document.querySelector("#custom-btn");
-            const cancelBtn = document.querySelector("#cancel-btn i");
-            const img = document.querySelector("img");
-            let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
-            function defaultBtnActive(){
-              defaultBtn.click();
+    const fileName = document.querySelector(".file-name");
+    const defaultBtn = document.querySelector("#default-btn");
+    const customBtn = document.querySelector("#custom-btn");
+    const cancelBtn = document.querySelector("#cancel-btn");
+    const img = document.getElementById("photoToBeUploaded");
+    let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
+    function defaultBtnActive(){
+    defaultBtn.click();
+    }
+    defaultBtn.addEventListener("change", function(){
+        const file = this.files[0];
+        if(file){
+            const reader = new FileReader();
+            reader.onload = function(){
+            const result = reader.result;
+            img.src = result;
+            wrapper.classList.add("active");
+            document.getElementById("bgPhoto").style.cssText=`background: url(../images/bg01.jpg);`
             }
-            defaultBtn.addEventListener("change", function(){
-              const file = this.files[0];
-              if(file){
-                const reader = new FileReader();
-                reader.onload = function(){
-                  const result = reader.result;
-                  img.src = result;
-                  wrapper.classList.add("active");
-                }
-                cancelBtn.addEventListener("click", function(){
-                  img.src = "";
-                  wrapper.classList.remove("active");
-                })
-                reader.readAsDataURL(file);
-              }
-              if(this.value){
-                let valueStore = this.value.match(regExp);
-                fileName.textContent = valueStore;
-              }
-            });
+            cancelBtn.addEventListener("click", function(){
+            img.src = "";
+            wrapper.classList.remove("active");
+            document.getElementById("bgPhoto").style.cssText=`background: var(--cardTextSize);`
+            })
+            reader.readAsDataURL(file);
+        }
+        if(this.value){
+            let valueStore = this.value.match(regExp);
+            fileName.textContent = valueStore;
+        }
+    });
+    function checkForm(id) {
+        var formInput = document.getElementById(id).value;
+        // console.log(formInput)
+        if(formInput==""){
+            document.getElementById(id).style.cssText=`border: 2px solid #ff000094;`
+            return false
+        }
+        else {
+            document.getElementById(id).style.cssText=`border: none;`
+            return true;
+        }
+    }
+    function ErrorMessage(){
+        for (var i=1; i<=3; i++) if (!checkForm(`input__${i}`)) return false
+        return true
+    }
+    const proForm  = document.getElementById('profileForm')
+    proForm.addEventListener('submit', e => {
+        var userid = document.getElementById("uid")
+        if ((check_cookie_name("loginData")).exist) userid.value = `${uid}`
+        var formData = new FormData(proForm)
+        var file = document.getElementById("default-btn")
+        if(file.files[0]) formData.append("productPhoto", file.files[0])
+        e.preventDefault()
+        if (ErrorMessage() && (file.files[0])) sendInfo()
+        async function sendInfo() {
+            var response = await fetch ( "../api/uploadProduct.php", {
+            method: 'POST',
+            body: formData
+            }).then(res => res.json()).then(response => response)
+            console.log(response)
+            if (response.complete) {
+            window.alert("Successfully Registered")
+            document.location.href = "./home-page.html"
+            }
+            else {
+            window.alert("Error: product not uploaded")
+            }
+        }
+    })
 </script>
 </html>
