@@ -12,18 +12,18 @@
       
           <form id="loginForm" method="POST" class="form login">
     
-            <div class="form__field">
+            <div class="form__field" id="formField1">
               <label for="login__username"><svg class="icon">
                   <use xlink:href="#icon-user"></use>
                 </svg><span class="hidden">Email</span></label>
-              <input autocomplete="username" id="login__username" type="email" name="email" class="form__input" placeholder="Email" required>
+              <input autocomplete="username" id="login__1" type="email" name="email" class="form__input" placeholder="Email" required>
             </div>
       
-            <div class="form__field">
+            <div class="form__field" id="formField2">
               <label for="login__password"><svg class="icon">
                   <use xlink:href="#icon-lock"></use>
                 </svg><span class="hidden">Password</span></label>
-              <input id="login__password" type="password" name="password" class="form__input" placeholder="Password" required>
+              <input id="login__2" type="password" name="password" class="form__input" placeholder="Password" required>
             </div>
       
             <div class="form__field">
@@ -50,11 +50,28 @@
           </symbol>
         </svg>
       <script>
+        function checkSignUp(id, id2) {
+            var formInput = document.getElementById(id).value;
+            // console.log(formInput)
+            if(formInput==""){
+              document.getElementById(id2).style.cssText=`border: 1px solid #b10000ad; border-radius: 4px; `
+              return false
+            }
+            else {
+              document.getElementById(id2).style.cssText=`border: none;`
+              return true;
+            }
+          }
+
+          function ErrorMessage(){
+            for (var i=1; i<=2; i++) if (!checkSignUp(`login__${i}`, `formField${i}`)) return false
+            return true
+          }
         const loginForm = document.getElementById('loginForm')
         loginForm.addEventListener('submit', e => {
           e.preventDefault()
 
-          getInfo()
+          if (ErrorMessage()) getInfo()
 
           
 
@@ -63,17 +80,16 @@
                       method: 'POST',
                       body: new FormData(loginForm)
                     }).then(res => res.json()).then(response => response).catch(error => console.error(error))
-
           let d = new Date()
           d.setTime(d.getTime()+(24 * 60 * 60 * 1000))
           let expires = 'expires='+d.toUTCString()
           console.log(loginData);
-          document.cookie = `loginData=${JSON.stringify(loginData)}; ${expires}; path=/;`
+          document.cookie = `loginData=${JSON.stringify(loginData)}; ${expires}; path=../../; SameSite=None; secure`
           if (loginData.exist) {
-            window.alert("successfully logged in")
-            window.location.href = "./homepage.html"
+            window.alert(loginData.message)
+            window.location.href = "./home-page.html"
           }
-          // else window.alert("")
+          else window.alert(loginData.message)
           }
           
           

@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="../../resources/css/style.css">
   <title>Contact Us</title>
 </head>
-<body class="contact_us_page">
+<body onload="checkLog()" class="contact_us_page">
   <header class="showcase" style="background: none">
     <div class="showcase_top">
         <div class="left">
@@ -23,13 +23,15 @@
             </div>
         </div>
         <div class="right">
-            <ul>
-                <li>
-                    
-                </li>
-                <li><a href="./sign.html">Sign up</a></li>
-                <li><a href="./login.html">Log in</a></li>
-            </ul>
+            <div id="logged_profile">
+                <ul>
+                  <li>
+                      
+                  </li>
+                  <li><a href="./sign.html">Sign up</a></li>
+                  <li><a href="./login.html">Log in</a></li>
+              </ul>
+            </div>
         </div>
     </div>
   </header>
@@ -112,5 +114,6 @@
 	window.location.href="./home-page.html"
 }
   </script>
+  <script src="../../resources/js/main.js"></script>
 </body>
 </html>
