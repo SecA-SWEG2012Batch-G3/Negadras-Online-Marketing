@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../resources/css/style.css">
     <title>home page</title>
 </head>
-<body onload="checkLog()">
+<body onload="checkLog(); renderProducts(0)">
     <header class="showcase">
         <div class="showcase_top">
             <div class="left">
@@ -226,7 +226,16 @@
         </div>
     </footer>
     <script>
-        
+//         function check_cookie_name(name) {
+// 	var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+// 	if (match) {
+// 		return JSON.parse(match[2]);
+// 	}
+// 	else{
+// 		return {exist: false};
+// 	}
+// }
+// console.log(check_cookie_name("loginData"))
     </script>
 </body>
 <script type="text/javascript" src="../../resources/js/main.js"></script>

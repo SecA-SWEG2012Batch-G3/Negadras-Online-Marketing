@@ -419,7 +419,7 @@ function renderNavs(){
 function renderProducts(page){
 	productContainer = document.getElementById("contain");
 	console.log(page)
-	for(i=page; i<page+6; i++){
+	for(i=page; i<page+8; i++){
 		productContainer.innerHTML+=`
 		<div class="tile">
             <div class="img_container">
@@ -609,7 +609,7 @@ function follow(i,f, color){
 		
 	}
 }
-renderProducts(0);
+// renderProducts(0);
 
 function addToCart(obj){
 	bod = document.body;
@@ -812,35 +812,54 @@ function login() {
 	transiti()
 }
 
+// **** check if user is logged in
+
+function check_cookie_name(name) {
+	var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+	if (match) {
+		return JSON.parse(match[2]);
+	}
+	else{
+		return {exist: false};
+	}
+}
+
 
 function gohome() {
 	window.location.href="./home-page.html"
 }
 
 function checkLog() {
-	if (localStorage.getItem("loggedUser") === null) {
-		console.log("session empty")
+	console.log("the following")
+	logData = (check_cookie_name("loginData"))
+	console.log(logData)
+	if ((check_cookie_name("loginData")).exist) {
+		console.log("session in sequence")
+		activateUser(logData.uid,logData.firstname, logData.lastname)
 	}
 	else {
-		log=JSON.parse(localStorage.getItem("loggedUser"));
-		activateUser(log);
+		console.log("session empty")
+		// log=JSON.parse(localStorage.getItem("loggedUser"));
+		// activateUser(log);
 	}
 }
 
-function activateUser(user) {
-	first=user.firstName
-	last=user.lastName
+function activateUser(uid,first, last) {
+	console.log(typeof(first))
+	console.log(typeof(last))
 	elemen=document.getElementById("logged_profile")
 	elemen.style.cssText=`background: #e6e4f0; flex-direction: column;`
 	elemen.innerHTML=`
 	  <div class="top_profile_bar" style="display: flex; justify-content: center; align-items: center; justify-content:flex-start;" >
 			<div class="profile_image" onclick="extendProfileMenu()">
-				<img src="../../resources/images/photo_2022-02-05_09-47-36.jpg" alt="" style="cursor:pointer" >
+				<img src=../../resources/usersData/${uid}/profile/profile.png alt="" style="cursor:pointer" >
 			</div>
 			<h2 onclick="extendProfileMenu()" style="cursor:pointer" >${first} ${last}</h2>
 	  </div>
 	`
 }
+
+// "../../resources/images/photo_2022-02-05_09-47-36.jpg"
 
 function extendProfileMenu() {
 	elemen=document.getElementById("logged_profile")
@@ -861,5 +880,5 @@ function logOut() {
 	<a href="./signup.html">Sign up</a>
 	 <a href="./loginPage.html">Log in</a>
 	`
-	window.localStorage.removeItem("loggedUser")
+	document.cookie = `loginData={}; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=../../; SameSite=None; secure`
 }

@@ -1,14 +1,13 @@
 <?php
-  session_start();
 
-  include("functions.php");
-  $conn = mysqli_connect("localhost","root","","negad");
-  
+  include "connection.php";
 
   if($_SERVER["REQUEST_METHOD"]=="POST"){
+
+    $json = array();
      
-     $email = $_POST["email"];
-     $password = md5($_POST["password"]);
+     $email = validateInput($_POST["email"]);
+     $password = md5(validateInput($_POST["password"]));
     //  echo $email. "  ". $password;
      
 
@@ -16,13 +15,12 @@
      
        $query = "SELECT * FROM users WHERE email='$email' LIMIT 1";
        $result = mysqli_query($conn, $query);
-    //    echo  json_encode(mysqli_fetch_assoc($result));
+        //    echo  json_encode(mysqli_fetch_assoc($result));
        
        if($result){
             if($result && mysqli_num_rows($result) > 0)
             {
                 $user_data = mysqli_fetch_assoc($result);
-                $json = array();
                 
                 if($user_data['password'] === $password)
                    {
@@ -32,21 +30,29 @@
                         }
                         $json[$key] = $value;
                     }
-                    $json['exist'] = "true";
+                    $json['exist'] = true;
+                    $json['message'] = "Susscessfully logged in";
                     echo json_encode($json);
 
                     // echo "success";
                    }
                 else {
-                    $json ['exist']= "false";
+                    $json ['exist']= false;
+                    $json['message'] = "Wrong password";
                     echo json_encode($json);
                 }
             }
        }
-        //  echo "wrong user name";
+       else {
+        $json ['exist']= false;
+        $json['message'] = "Wrong username";
+        echo json_encode($json);
+       }
     } else 
        {
-        //   echo "Please Enter some valid information";
+        $json ['exist']= false;
+       $json['message'] = "please enter username and password";
+       echo json_encode($json);
           
        }
   }
