@@ -10,6 +10,7 @@
     <title>Profile</title>
 </head>
 <body onload="checkLog()">
+    <div class="backgroundBlur"></div>
     <header class="showcase">
         <div class="showcase_top">
             <div class="left">
@@ -150,6 +151,8 @@
         </div>
     </div>
 </body>
+<script type="text/javascript" src="../../resources/js/funcs.js"></script>
+<script src="https://code.iconify.design/2/2.2.0/iconify.min.js"></script>
 <script type="text/javascript" src="../../resources/js/main.js"></script>
 <script type="text/javascript">
     function toogleNavs(type){
@@ -197,7 +200,7 @@
             const result = reader.result;
             img.src = result;
             wrapper.classList.add("active");
-            document.getElementById("bgPhoto").style.cssText=`background: url(../images/bg01.jpg);`
+            document.getElementById("bgPhoto").style.cssText=`background: url(../../resources/images/bg01.jpg);`
             }
             cancelBtn.addEventListener("click", function(){
             img.src = "";
@@ -237,17 +240,21 @@
         e.preventDefault()
         if (ErrorMessage() && (file.files[0])) sendInfo()
         async function sendInfo() {
+            loading("addLoad")
             var response = await fetch ( "../api/uploadProduct.php", {
             method: 'POST',
             body: formData
             }).then(res => res.json()).then(response => response)
+            loading("remove")
             console.log(response)
             if (response.complete) {
-            window.alert("Successfully Registered")
+            // window.alert("Successfully Registered")
+            errorHand({type: "success", message: "Successfully Uploaded"})
             document.location.href = "./home-page.html"
             }
             else {
-            window.alert("Error: product not uploaded")
+            // window.alert("Error: product not uploaded")
+            errorHand({type:"error", message: "Product is not uploaded"});
             }
         }
     })

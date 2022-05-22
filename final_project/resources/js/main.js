@@ -1,345 +1,26 @@
-var products =[
-	{
-		id: 1,
-		name: "Armani shirt",
-		price:1500,
-		rating:3,
-		image: "../../resources/images/C-1.png",
-		alt:"Blue shirt",
-		desc:"Quality Men Armani shirt, with Different color and size choices Order now to get",
-	},
-	{
-		id: 2,
-		name: "H&M Women's T-shirt",
-		price:700,
-		rating:4,
-		image: "../../resources/images/C-2.png",
-		alt:"Black T-shirt",
-		desc:"H&M Quality T-shirt, with Different color and size choices order now to get this product online",
-	},
-	{
-		id: 3,
-		name: "Polo Jacket",
-		price:2000,
-		rating:5,
-		image: "../../resources/images/C-3.png",
-		alt:"Women's jacket",
-		desc:"Brand new Fashion Women's jacket, with Different color and size choices order now to get this product online",
-	},
-	{
-		id: 4,
-		name: "Nike running shoes",
-		price:1700,
-		rating:4,
-		image: "../../resources/images/C-4.png",
-		alt:"Blue nike shoes",
-		desc:"Original Nick Mens Running shoes, with Multiple size choices order now to get this product online",
-	},
-	{
-		id: 5,
-		name: "Armani Jacket",
-		price:1300,
-		rating:4,
-		image: "../../resources/images/C-5.png",
-		alt:"Blue jacket",
-		desc:"Original Armani Men jacket, with Different color and size choices order now to get this product online",
-	},
-	{
-		id: 6,
-		name: "Black hill shoe",
-		price:1000,
-		rating:1,
-		image: "../../resources/images/C-6.png",
-		alt:"Black hill shoe",
-		desc:"Brand New Fashion Ladys Dinner Shoes, with multiple sizes order now to get this product online",
-	},
-	{
-		id: 7,
-		name: "Nike running shoes",
-		price:1200,
-		rating:5,
-		image: "../../resources/images/C-7.png",
-		alt:"Nike running shoes",
-		desc:"Original Nick Mens Running shoes, with Multiple size choices order now to get this product online",
-	},
-	{
-		id: 8,
-		name: "Blue T-shirt",
-		price:500,
-		rating:2,
-		image: "../../resources/images/C-8.png",
-		alt:"",
-		desc:"Mens Quality T-shirt, with Different color and size choices order now to get this product online",
-	},
-	{
-		id: 9,
-		name: "Red jacket",
-		price:1400,
-		rating:3,
-		image: "../../resources/images/C-9.png",
-		alt:"",
-		desc:"Original Confortable Mens Jacket, with Different Size Avilable order now to get this product online",
-	},
-	{
-		id: 10,
-		name: "Armani shirt",
-		price:1900,
-		rating:5,
-		image: "../../resources/images/C-10.png",
-		alt:"",
-		desc:"Fashion Jeans Mens Jacket, with Different color and size choices order now to get this product online",
-	},
-	{
-		id: 11,
-		name: "Black T-shirt",
-		price:800,
-		rating:3,
-		image: "../../resources/images/C-11.png",
-		alt:"Black tshirt",
-		desc:"Fashion Mens Quality T-shirt, with Different color and size choices order now to get this product online",
-	},
-	{
-		id: 12,
-		name: "Addidas jacket",
-		price:1300,
-		rating:4,
-		image: "../../resources/images/C-12.png",
-		alt:"Red jacket",
-		desc:"Brand New Addidas jacket, with Different color and size choices order now to get this product online",
-	},
-	{
-		id: 13,
-		name: "Gaming mouse",
-		price:300,
-		rating:3,
-		image: "../../resources/images/E-1.png",
-		alt:"",
-		desc:"Orginal Gaming Computer Mouse For Gamers and Office uses order now to get this product online",
-	},
-	{
-		id: 14,
-		name: "Nikon Camera",
-		price:60000,
-		rating:3,
-		image: "../../resources/images/E-2.png",
-		alt:"",
-		desc:"HD high Quality professional Nikon Camera order now to get this product online",
-	},
-	{
-		id: 15,
-		name: "Air Conditioner",
-		price:12000,
-		rating:4,
-		image: "../../resources/images/E-3.png",
-		alt:"",
-		desc:"Digital Brand New Home and Office Air Conditioner order now to get this product online",
-	},
-	{
-		id: 16,
-		name: "Sandisk",
-		price:300,
-		rating:3,
-		image: "../../resources/images/E-4.png",
-		alt:"",
-		desc:"Sandisk Original flash drive with different sizes order now to get this product online",
-	},
-	{
-		id: 17,
-		name: "Lenovo Tablet",
-		price:8000,
-		rating:2,
-		image: "../../resources/images/E-5.png",
-		alt:"",
-		desc:"Lenove Mini Tablet with Different Color Choice and Storage sizes order now to get this product online",
-	},
-	{
-		id: 18,
-		name: "Pink Beats",
-		price:2000,
-		rating:4,
-		image: "../../resources/images/E-6.png",
-		alt:"",
-		desc:"High Quality Ladies Original Pink Beats Headset order now to get this product online",
-	},
-	{
-		id: 19,
-		name: "Beats Black",
-		price:2000,
-		rating:5,
-		image: "../../resources/images/E-7.png",
-		alt:"",
-		desc:"High Quality Original Beat Headset Studio Edition order now to get this product online",
-	},
-	{
-		id: 20,
-		name: "Drone",
-		price:8900,
-		rating:4,
-		image: "../../resources/images/E-8.png",
-		alt:"",
-		desc:"HighTech Brand new Drone with Hd quality For Video Production order now to get this product online",
-	},
-	{
-		id: 21,
-		name: "Samsung refregerator",
-		price:10000,
-		rating:3,
-		image: "../../resources/images/E-9.png",
-		alt:"",
-		desc:"Brand new Samsung Smart Home Refregerator with Powersaving Functionality order now to get this product online",
-	},
-	{
-		id: 22,
-		name: "Hp Pavilion",
-		price:30000,
-		rating:4,
-		image: "../../resources/images/E-10.png",
-		alt:"",
-		desc:"Hp Pavilion Laptop, with Different Size and Performance choices order now to get this product online",
-	},
-	{
-		id: 23,
-		name: "Iphone 7",
-		price:13000,
-		rating:5,
-		image: "../../resources/images/E-11.png",
-		alt:"",
-		desc:"Red Iphone 7, with Different Storage Size order now to get this product online",
-	},
-	{
-		id: 24,
-		name: "Boiler",
-		price:2000,
-		rating:3,
-		image: "../../resources/images/E-12.png",
-		alt:"",
-		desc:"High Quality Shock resistance Electric Boiler  order now to get this product online",
-	},
-	{
-		id: 25,
-		name: "Brocoli",
-		price:60,
-		rating:3,
-		image: "../../resources/images/G-1.png",
-		alt:"",
-		desc:"Everyday Healthy Fresh Vegetables to Eat Available order now to get this product online",
-	},
-	{
-		id: 26,
-		name: "Carrot",
-		price:20,
-		rating:3,
-		image: "../../resources/images/G-2.png",
-		alt:"",
-		desc:"Everyday Healthy Fresh Vegetables to Eat Available order now to get this product online",
-	},
-	{
-		id: 27,
-		name: "Cauliflower",
-		price:40,
-		rating:3,
-		image: "../../resources/images/G-3.png",
-		alt:"",
-		desc:"Everyday Healthy Fresh Vegetables to Eat Available order now to get this product online",
-	},
-	{
-		id: 28,
-		name: "Cabbage",
-		price:30,
-		rating:3,
-		image: "../../resources/images/G-4.png",
-		alt:"",
-		desc:"Everyday Healthy Fresh Vegetables to Eat Available order now to get this product online",
-	},
-	{
-		id: 29,
-		name: "Red chili",
-		price:20,
-		rating:3,
-		image: "../../resources/images/G-5.png",
-		alt:"",
-		desc:"Everyday Healthy Fresh Vegetables to Eat Available order now to get this product online",
-	},
-	{
-		id: 30,
-		name: "Red peper",
-		price:30,
-		rating:3,
-		image: "../../resources/images/G-6.png",
-		alt:"",
-		desc:"Everyday Healthy Fresh Vegetables to Eat Available order now to get this product online",
-	},
-	{
-		id: 31,
-		name: "Potato",
-		price:15,
-		rating:3,
-		image: "../../resources/images/G-7.png",
-		alt:"",
-		desc:"Everyday Healthy Fresh Vegetables to Eat Available order now to get this product online",
-	},
-	{
-		id: 32,
-		name: "Salad",
-		price:40,
-		rating:3,
-		image: "../../resources/images/G-8.png",
-		alt:"",
-		desc:"Everyday Healthy Fresh Vegetables to Eat Available order now to get this product online",
-	},
-	{
-		id: 33,
-		name: "Onion",
-		price:30,
-		rating:3,
-		image: "../../resources/images/G-9.png",
-		alt:"",
-		desc:"Everyday Healthy Fresh Vegetables to Eat Available order now to get this product online",
-	},
-	{
-		id: 34,
-		name: "Cabbage",
-		price:30,
-		rating:3,
-		image: "../../resources/images/G-10.png",
-		alt:"",
-		desc:"Everyday Healthy Fresh Vegetables to Eat Available order now to get this product online",
-	},
-	{
-		id: 35,
-		name: "Tomato",
-		price:30,
-		rating:3,
-		image: "../../resources/images/G-11.png",
-		alt:"",
-		desc:"Everyday Healthy Fresh Vegetables to Eat Available order now to get this product online",
-	},
-	{
-		id: 36,
-		name: "Cucumber",
-		price:20,
-		rating:3,
-		image: "../../resources/images/G-12.png",
-		alt:"",
-		desc:"Everyday Healthy Fresh Vegetables to Eat Available order now to get this product online",
-	},
-]
-var users = [
-	{
-		username: "Abel",
-		password:"123456",
-	},
-	{
-		username: "Selo",
-		password:"123456",
-	},
-]
-// console.log(Math.random(10))
+var products =[]
+async function getProducts(){
+	// {
+	// 	id: 1,
+	// 	name: "Armani shirt",
+	// 	price:1500,
+	// 	rating:3,
+	// 	image: "../../resources/images/C-1.png",
+	// 	alt:"Blue shirt",
+	// 	desc:"Quality Men Armani shirt, with Different color and size choices Order now to get",
+	// },
+	loading("addLoad");
+	var p = await fetch("../api/product.php").then((resp)=> resp.json()).then(response=> response)
+	loading("remove")
+	products=p;
+	await renderProducts(0);
+	// console.log(p)
+}
 function nextClick1(starts){
 	curr=starts;
 	start=starts
 	end=starts+6;
-	console.log(start,",", end)
+	// console.log(start,",", end)
 	productContainer = document.getElementById("contain");
 	productContainer.innerHTML="";
 	bottomNavs = document.getElementsByClassName("BottomNavs")[0];
@@ -362,7 +43,7 @@ function nextClick(){
 		bottomNavs = document.getElementsByClassName("BottomNavs")[0];
 		bottomNavs.innerHTML="";
 		renderProducts(start);
-		console.log(start,",", end)
+		// console.log(start,",", end)
 	}
 }
 
@@ -391,12 +72,12 @@ function renderNavs(){
 			unBut.style.cssText=""
 		}
 		catch{
-			console.log("not found");
+			// console.log("not found");
 		}
 		if(curr==i+1){
 			num.className+=" bottomNavNum";
 			num.style.cssText+=" cursor:default;box-shadow:none;";
-			console.log("Error")
+			// console.log("Error")
 		}
 		var k=6*i;
 		num.setAttribute("onclick", `nextClick1(${k})`)
@@ -418,12 +99,12 @@ function renderNavs(){
 }
 function renderProducts(page){
 	productContainer = document.getElementById("contain");
-	console.log(page)
+	// console.log(page)
 	for(i=page; i<page+8; i++){
 		productContainer.innerHTML+=`
 		<div class="tile">
             <div class="img_container">
-                <img src="${products[i].image}" id="${products[i].id}" class="${products[i].id}" alt="">
+                <img src="${products[i].photo}" id="${products[i].pid}" class="${products[i].pid}" alt="">
                 <ul class="action">
                     <li>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="nav_svg"><path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"/></svg>
@@ -509,7 +190,7 @@ function nextClick1(starts){
 	curr=starts;
 	start=starts
 	end=starts+6;
-	console.log(start,",", end)
+	// console.log(start,",", end)
 	productContainer = document.getElementById("contain");
 	productContainer.innerHTML="";
 	bottomNavs = document.getElementsByClassName("BottomNavs")[0];
@@ -518,14 +199,14 @@ function nextClick1(starts){
 }function viewDetail(obj){
 	bod = document.body;
 	try{
-		elem = document.getElementById(obj.id.toString())
-		elem = document.getElementsByClassName(obj.id.toString())[0]
+		elem = document.getElementById(obj.pid.toString())
+		elem = document.getElementsByClassName(obj.pid.toString())[0]
 	}
 	catch{
-		elem = document.getElementsByClassName(obj.id.toString())[0]
+		elem = document.getElementsByClassName(obj.pid.toString())[0]
 	}
 	
-	console.log(elem)
+	// console.log(elem)
 	var { R, G, B } = getAverageColor(elem, 1)
 	bod.innerHTML+=`  
 	<div class="wrapper">
@@ -537,12 +218,12 @@ function nextClick1(starts){
 	      </div>
 	      <div id="product_img" class="product-item">    
 	          <div id="conta">
-	            <img src="${obj.image}" id="img">
+	            <img src="${obj.photo}" id="img">
 	          </div>
 	        </div>
 	        <div id="product_disc" class="product-detail" style="background-color:rgb(${R}, ${G},${B}); color: white; font-family: montserrat">
 	           <h3 class="card_top_heading" style="font-size: 25px">${obj.name}</h3>
-	           <p style="margin-top: 20px">${obj.desc}</p>
+	           <p style="margin-top: 20px">${obj.description}</p>
 	           <br>
 	           <h3>Price:- <b>${obj.price} birr</b></h3>
 	           <button class="order-btn" onclick="login()">Order Now</button>
@@ -570,14 +251,14 @@ function zoom(color){
 	i.setAttribute("class","zo")
 	cont.append(i);
 	img.onmouseenter= (e)=>{
-		console.log("in")
+		// console.log("in")
 		i.className="zo clip displayBlock"
 		// i.style.cssText+=`cursor: unset;`
 		follow(i,event)
 	}
 	img.onmouseleave = ()=>{
 		i.className="zo clip"
-		console.log("out")
+		// console.log("out")
 	}
 }
 
@@ -613,8 +294,8 @@ function follow(i,f, color){
 
 function addToCart(obj){
 	bod = document.body;
-	elem = document.getElementById(obj.id.toString())
-	console.log(elem)
+	elem = document.getElementById(obj.pid.toString())
+	// console.log(elem)
 	var { R, G, B } = getAverageColor(elem, 1)
 	bod.innerHTML+=`  
 	<div class="wrapper">
@@ -626,7 +307,7 @@ function addToCart(obj){
 	      </div>
 	      <div class="product-item">
 	          <div id="conta">
-	            <img src="${obj.image}" id="img">
+	            <img src="${obj.photo}" id="img">
 	          </div>
 	        </div>
 	        <div class="product-detail" style="background-color:rgb(${R}, ${G},${B}); color: white; font-family: montserrat">
@@ -708,7 +389,7 @@ function filter(val) {
 		}
 	}
 	display(index);
-	console.log(index)
+	// console.log(index)
 	return index;
 }
 
@@ -728,7 +409,7 @@ function display(val) {
 		for (let i=0; i<val.length; i++) {
 			suggestionBox.innerHTML+=`
 			<div class="suggestion" onclick="viewDetail(products[${val[i]}])">
-									<img src="${products[val[i]].image}" class="${products[val[i]].id}" alt="">
+									<img src="${products[val[i]].photo}" class="${products[val[i]].pid}" alt="">
 									<div class="discription"> 
 										<p>${products[val[i]].name}</p>
 										<p>${products[val[i]].price}</p>
@@ -830,16 +511,25 @@ function gohome() {
 }
 
 function checkLog() {
+	// console.log("the following")
 	logData = (check_cookie_name("loginData"))
-	console.log(logData)
+	// console.log(logData)
 	if ((check_cookie_name("loginData")).exist) {
+		// console.log("session in sequence")
 		activateUser(logData.uid,logData.firstname, logData.lastname)
 		return true;
 	}
-	else return false
+	else {
+		// console.log("session empty")
+		// log=JSON.parse(localStorage.getItem("loggedUser"));
+		// activateUser(log);
+		return false
+	}
 }
 
 function activateUser(uid,first, last) {
+	// console.log(typeof(first))
+	// console.log(typeof(last))
 	elemen=document.getElementById("logged_profile")
 	elemen.style.cssText=`background: #e6e4f0; flex-direction: column;`
 	elemen.innerHTML=`
@@ -866,7 +556,7 @@ function extendProfileMenu() {
 }
 
 function logOut() {
-	console.log("session cleared")
+	// console.log("session cleared")
 	elemen=document.getElementById("logged_profile")
 	elemen.style.cssText=`background: none; flex-direction: row;`
 	elemen.innerHTML=`

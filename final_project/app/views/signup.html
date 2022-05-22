@@ -6,8 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
         <link href="../../resources/css/login.css" rel="stylesheet">
+        <link href="../../resources/css/style.css" rel="stylesheet">
     </head>
-    <body class="align">
+    <body class="align" style="background: url(../../resources/images/bg01.jpg) rgba(246,196,46,0.4);background-size:cover ; background-repeat: no-repeat;">
+      <div class="backgroundBlur"></div>
       <!-- <?php if(!empty($errors)): ?>
           <div class="alert alert-danger">
             <?php foreach($errors as $error): ?>
@@ -83,6 +85,9 @@
             <button onclick="defaultBtnActive()" id="custom-btn">Choose a file</button>
             <input id="default-btn" name="file" type="file" hidden>
         </div>
+        <script type="text/javascript" src="../../resources/js/funcs.js"></script>
+      <script src="https://code.iconify.design/2/2.2.0/iconify.min.js"></script>
+
         <script>
             function checkSignUp(id, id2) {
             var formInput = document.getElementById(id).value;
@@ -112,17 +117,21 @@
             console.log(ErrorMessage())
             if (ErrorMessage()) sendInfo()
             async function sendInfo() {
+              loading("addLoad");
               var response = await fetch ( "../api/signup.php", {
                 method: 'POST',
                 body: formData
               }).then(res => res.json()).then(response => response)
               console.log(response)
+              loading("remove");
               if (response.success) {
-                window.alert("Successfully Registered")
+                // window.alert("Successfully Registered")
+                errorHand({type: "success", message: response.message})
                 document.location.href = "./loginPage.html"
               }
               else {
-                window.alert("Error: not registered")
+                // window.alert("Error: not registered")
+                errorHand({type: "error", message: "Email exists"})
               }
             }
           })
@@ -157,5 +166,6 @@
               }
             });
         </script>
+      <script type="text/javascript" src="../../resources/js/funcs.js"></script>
       </body>
 </html>

@@ -7,12 +7,15 @@
     <link rel="stylesheet" href="../../resources/css/style.css">
     <title>home page</title>
 </head>
-<body onload="checkLog(); renderProducts(0)">
+<body onload="checkLog()">
+    <div class="backgroundBlur"></div>
     <header class="showcase">
         <div class="showcase_top">
             <div class="left">
                 <img src="../../resources/images/logo/logo_01.png" alt="logo" class="log" onclick="gohome()" style="cursor:pointer">
-                <img src="../../resources/images/logo/logo_small.png" alt="logo" class="log_s" onclick="gohome()" style="cursor:pointer">
+                <div class="profile_image" onclick="extendProfileMenu()">
+                    <img src=../../resources/usersData/07/profile/profile.png alt="" style="cursor:pointer" >
+                </div>
                 <div class="navs">
                     <ul class="nav_list">
                     <div class="home"><li><a href="./home-page.html">Home</a></li></div>
@@ -238,5 +241,9 @@
 // console.log(check_cookie_name("loginData"))
     </script>
 </body>
+<script type="text/javascript" src="../../resources/js/funcs.js"></script>
 <script type="text/javascript" src="../../resources/js/main.js"></script>
+<script type="text/javascript">
+    getProducts();
+</script>
 </html>
