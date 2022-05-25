@@ -1,4 +1,5 @@
 var products =[]
+var carts =[]
 async function getProducts(){
 	// {
 	// 	id: 1,
@@ -292,56 +293,199 @@ function follow(i,f, color){
 }
 // renderProducts(0);
 
+function displayCartBtn() {
+	if (carts.length != 0 ) {
+		var cartBtn = document.getElementById("cart")
+		cartBtn.style.cssText= `
+		width: 25px;
+		border-radius: 50%;
+		padding: 5px;
+		background: radial-gradient(#e2bd4b91,#ebb713a6,#ebb7132e) !important;
+		position: fixed;
+		right: 0;
+		top: 50%;
+		z-index: 3;
+		cursor: pointer;
+		margin-right: 5px;`
+	}
+}
+displayCartBtn()
+
 function addToCart(obj){
-	bod = document.body;
-	elem = document.getElementById(obj.pid.toString())
-	// console.log(elem)
-	var { R, G, B } = getAverageColor(elem, 1)
-	bod.innerHTML+=`  
+	carts.push(obj)
+	displayCartBtn()
+}
+
+function showCart() {
+	var cart = document.getElementById("productCard")
+	cart.innerHTML = `
 	<div class="wrapper">
-	   <div class="product">
-	     <div class="product-pop">
-	      <div class="close" onclick="removePopup()">
-	        <div class="bar-1" style="background-color:rgb(${R}, ${G},${B})"></div>
-	        <div class="bar-2" style="background-color:rgb(${R}, ${G},${B})"></div>
-	      </div>
-	      <div class="product-item">
-	          <div id="conta">
-	            <img src="${obj.photo}" id="img">
-	          </div>
-	        </div>
-	        <div class="product-detail" style="background-color:rgb(${R}, ${G},${B}); color: white; font-family: montserrat">
-	           <h3 class="card_top_heading" style="font-size: 25px; text-align:center;">Log in</h3>
-			   <form>
-
-					<div class="form-box">
-						<div class="row">
-							<div class="input-box" >
-								<input type="email" placeholder="Email" style="padding:var(--cardTextSize);">
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="input-box">
-								<input type="password" placeholder="Password" style="padding:var(--cardTextSize);">
-							</div>
-						</div>
-
-						<div class="message">
-							<div class="input-box">
-							<button class="order-btn">LOG IN</button>
-							</div>
-						</div>
-					</div>
-
-				</form>
-	        </div>
-			
-	     </div>
-
+	<div class="product" style="background: rgba(0, 0, 0, 0.2);">
+	  <div class="product-pop" style="height: 500px;">
+	   <div class="close" onclick="removePopup()">
+		 <div id="bar1" class="bar-1" style="background-color:black"></div>
+		 <div id="bar2" class="bar-2" style="background-color:black"></div>
 	   </div>
+	   <div class="cartItems" style="
+									width: 100%;
+									display: flex;
+									flex-direction: column;
+									justify-content: flex-end;
+									align-items: center;">
+		   <div id="cartList" class="list" style="
+									display: flex;
+									flex-direction: column;
+									width: 100%;
+									justify-content: center;
+									align-items: center;
+									scrollbar-color: #e84118 #2f36400d;
+										scrollbar-width: thin;
+										overflow-y: scroll; 
+									">
+			   
+		   </div>
+		   <div id="cart_disc" class="cart-detail" style="
+		   background-color: #ebb713; 
+		   color: white; 
+		   font-family: montserrat; 
+		   opacity: 0.9;
+		   border-radius: 20px;
+		   text-align: center;
+		   width: 100%;
+		   height: 170px;
+		   border-top-left-radius: 0;
+		   border-top-right-radius: 0;
+		   ">
+			 <div style="width: 60%; margin:auto">
+				 <h3 class="card_top_heading" style="font-size: 25px">Checkout</h3>
+				 <h5 style="margin-top: 10px; width: 100%;"><span style="float: left;">sub total:</span><span style="float: right;"><span id="cart_total">950</span> ETB</span></h5><br>
+				 <h5 style="margin-top: 10px; width: 100%;"><span style="float: left;">tax (5%):</span><span style="float: right;"><span id="cart_vat">9</span> ETB</span></h5><br>
+				 <h4 style="margin-top: 10px; width: 100%;"><span style="float: left;">GRAND TOTAL:</span><span style="float: right;"><span id="cart_grand_total">959</span> ETB</span></h4>
+				 <br>
+				 <button class="order-btn" style="  margin-top: 10px !important;" onclick="login()">Checkout</button>
+			 </div>
+		  </div>
+	   </div>
+	  </div>
 
-  </div>`;
+	</div>
+
+</div>
+		`
+	renderCart()
+}
+
+function getCount (pid, obj) {
+	var count = 0;
+    for (var i = 0; i < obj.length; i++) {
+        if (obj[i].pid == pid) {
+            count++;
+        }
+    }
+    return count;
+}
+
+function renderCart() {
+	var	cartList = document.getElementById("cartList")
+	var total = 0
+	cartList.innerHTML = ""
+	if (carts.length == 0) {
+		removePopup()
+		var cartBtn = document.getElementById("cart")
+		cartBtn.style.cssText= `display:none;`
+	}
+	var cart = carts.filter((value, index) => carts.indexOf(value) === index)
+	cart.forEach(prod => {
+		// getCount(prod.pid, carts)
+		total += (getCount(prod.pid, carts))*(prod.price)
+		cartList.innerHTML += `
+		<div class="suggestion" style="background: radial-gradient(#e2bd4b91,#ebb713a6,#ebb7132e) !important; padding: 0 30px; width: 90%;;
+		display: grid;
+		justify-content: space-between;
+		height: 6em;
+		border-radius: 10px;
+		cursor: pointer;
+		grid-template-columns: 13% 41% 10% 22% 4%;
+		text-align: center;
+	  }">
+                     <div class="image" style="
+                                                width: 80px;
+                                                height: 70px;
+                                                object-fit: cover;
+                                                overflow-x: hidden;
+                                                overflow-y: hidden;">
+                            <img src="${prod.photo}" alt="" style="
+                                                            width: 100%;
+                                                            height: 100%;">
+                        </div>
+                     <div class="discription" style="width: auto;"> 
+                         <p>${prod.name}</p>
+                         <div class="rating">
+                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="star-svg"><path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/></svg>
+                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="star-svg"><path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/></svg>
+                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="star-svg"><path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/></svg>
+                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="star-svg"><path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/></svg>
+                         </div>
+                     </div>
+                     <div class="quantity">
+					 <label style="color: aliceblue;
+					 text-transform: capitalize;
+					 font-family: montserrat;"
+					  for="fname">Quantity</label><br>
+                         <input id="input_${prod.pid}" onchange="reRenderCart(${prod.pid},${prod.price})" style="width: 54px;
+						 background: inherit;
+						 color: aliceblue;
+						 text-transform: capitalize;
+						 font-family: montserrat;
+						 border: 2px solid aliceblue;
+						 border-radius: 5px;
+						 margin: 2px;
+						 padding: 5px;"  type="number" name="amount" value="${getCount(prod.pid, carts)}">
+                     </div>
+					 <div id="${prod.pid}" style="color: aliceblue;
+					 text-transform: capitalize;
+					 font-family: montserrat;">
+	  					<h4>Unit Price: ${prod.price}</h4>
+						<h5>${getCount(prod.pid, carts)} x ${prod.price} = <span id="value_${prod.pid}">${(getCount(prod.pid, carts))*(prod.price)}</span></h5>
+					 </div>
+                     <div class="remove_itm" style="width: 20px;" onclick="removeFromCart(${prod.pid})">
+                       <?xml version="1.0" encoding="iso-8859-1"?><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 496 496" style="enable-background:new 0 0 496 496;" xml:space="preserve"><path style="fill:#B5092B94;" d="M496,248c0,136.8-111.2,248-248,248S0,384.8,0,248S111.2,0,248,0S496,111.2,496,248z"/><path style="fill:#89002700;" d="M248,0c136.8,0,248,111.2,248,248S384.8,496,248,496"/><path style="fill:#883549B5;" d="M72.8,72.8c96.8-96.8,253.6-96.8,350.4,0s96.8,253.6,0,350.4"/><g><path style="fill:#EEFFFF;" d="M321.6,333.6c-3.2,0-5.6-0.8-8-3.2l-148-148c-4.8-4.8-4.8-12,0-16.8s12-4.8,16.8,0l148,148 c4.8,4.8,4.8,12,0,16.8C328,332.8,324.8,333.6,321.6,333.6z"/><path style="fill:#EEFFFF;" d="M174.4,333.6c-3.2,0-5.6-0.8-8-3.2c-4.8-4.8-4.8-12,0-16.8l148-148c4.8-4.8,12-4.8,16.8,0 s4.8,12,0,16.8l-148.8,148C180,332.8,176.8,333.6,174.4,333.6z"/></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
+                     </div>
+                 </div>
+		`
+	})
+	document.getElementById("cart_total").innerHTML=`${total}`
+	document.getElementById("cart_grand_total").innerHTML=`${(total*0.05)+total}`
+	document.getElementById("cart_vat").innerHTML=`${(total*0.05)}`
+}
+
+function reRenderCart(id, price) {
+	var previousValue = parseInt(document.getElementById(("value_"+id)).innerHTML)
+	var total = parseInt(document.getElementById("cart_total").innerHTML)
+
+
+	id = id.toString()
+	var input_id ="input_"+ id
+	document.getElementById(id).innerHTML=" "
+	var currAmount = document.getElementById(input_id).value
+	document.getElementById(id).innerHTML=`
+	</div id="${id}">
+	<div style="color: aliceblue;
+	text-transform: capitalize;
+	font-family: montserrat;">
+		 <h4>Unit Price: ${price}</h4>
+	   <h5>${currAmount} x ${price} = <span id="value_${id}">${(currAmount)*(price)}</span></h5>
+	</div>
+	`
+	total += ((currAmount*price)-previousValue)
+	document.getElementById("cart_total").innerHTML=`${total}`
+	document.getElementById("cart_grand_total").innerHTML=`${(total*0.05)+total}`
+	document.getElementById("cart_vat").innerHTML=`${(total*0.05)}`
+}
+
+function removeFromCart(obj) {
+	carts.pop(obj)
+	renderCart()
 }
 
 function search_shrink() {
