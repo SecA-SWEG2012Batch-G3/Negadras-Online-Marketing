@@ -46,6 +46,23 @@
                 <span class="hidden">Password</span></label>
                 <input id="login__5" type="password" name="password" class="form__input" placeholder="New Password" onkeyup="checkSignUp(`login__5`, `formField5`)">
               </div>
+              <div class="form__field" id="formField4">
+                <label for="securityQuestion">Security Question</label>
+                <select id="securityQuestion" name="securityQuestion" class="form__input" onchange="checkSignUp('securityQuestion', 'formField4')">
+                    <option value="" selected disabled>Select a Security Question</option>
+                    <option value="motherMaidenName">What is your mother's maiden name?</option>
+                    <option value="birthplace">Where were you born?</option>
+                    <option value="firstPet">What was the name of your first pet?</option>
+                    <option value="favoriteTeacher">Who was your favorite teacher?</option>
+                    <option value="childhoodFriend">Who is your childhood best friend?</option>
+                </select>
+            </div>
+            
+              <div class="form__field" id="formField4">
+                <label for="login__username">  
+                <span class="hidden">Security Question Answer</span></label>
+                <input  id="login__4" type="tel" name="phone" class="form__input" placeholder="Security Question Answer" onkeyup="checkSignUp(`login__4`, `formField4`)">
+              </div>
             <div class="form__field" id="formField6">
                 <label for="login__password">
                 <span class="hidden">Password</span></label>
@@ -62,7 +79,7 @@
       
         </div>
 
-          <div class="container">
+          <!-- <div class="container">
             <div class="wrapper">
               <div class="image">
                   <img src="" alt="">
@@ -84,7 +101,8 @@
             </div>
             <button onclick="defaultBtnActive()" id="custom-btn">Choose a file</button>
             <input id="default-btn" name="file" type="file" hidden>
-        </div>
+          </div> -->
+
         <script type="text/javascript" src="../../resources/js/funcs.js"></script>
       <script src="https://code.iconify.design/2/2.2.0/iconify.min.js"></script>
 
