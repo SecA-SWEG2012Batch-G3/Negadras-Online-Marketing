@@ -75,8 +75,44 @@
       <div class="contact-us form">
         <h3>Send a Message</h3>
         <form>
-          <div class="form-box">
-            <div class="row">
+          <div class="form-box" id="contactForm">
+        
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="bottom_logo">
+    <img src="../../resources/images/logo/logo_inverted_01.png" alt="" class="inverted_logo" onclick="gohome()" style="cursor:pointer">
+  </div>
+  <script>
+    function check_cookie_name(name) {
+      var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+      if (match) {
+        return JSON.parse(match[2]);
+      }
+      else{
+        return {exist: false};
+      }
+    }
+    function renderContact() {
+      // console.log("the following")
+      logData = (check_cookie_name("loginData"))
+      let dest = document.getElementById("contactForm")
+      // console.log(logData)
+      if ((check_cookie_name("loginData")).exist) {
+        // console.log("session in sequence")
+        dest.innerHTML = `<div class="message">
+              <div class="input-box">
+                <span>Message</span>
+                <textarea placeholder="Write your message here ....." cols="30" ></textarea>
+                <input type="submit" value="Send">
+              </div>`
+        activateUser(logData.uid,logData.firstname, logData.lastname)
+        return true;
+      }
+      else {
+        dest.innerHTML = `<div class="row">
               <div class="input-box">
                 <span>First Name</span>
                 <input type="text" placeholder="Jhon">
@@ -104,16 +140,14 @@
                 <textarea placeholder="Write your message here ....." cols="30" ></textarea>
                 <input type="submit" value="Send">
               </div>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-  <div class="bottom_logo">
-    <img src="../../resources/images/logo/logo_inverted_01.png" alt="" class="inverted_logo" onclick="gohome()" style="cursor:pointer">
-  </div>
-  <script>
+            </div>`
+        // console.log("session empty")
+        // log=JSON.parse(localStorage.getItem("loggedUser"));
+        // activateUser(log);
+        return false
+      }
+    }
+    renderContact()
     function gohome() {
 	window.location.href="./home-page.html"
 }
