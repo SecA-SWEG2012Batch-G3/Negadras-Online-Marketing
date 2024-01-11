@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../Resources/css/style.css">
+    <link rel="stylesheet" href="../../Resources/css/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <title>Profile</title>
+</head>
+<body onload="checkLog()">
+    <div class="backgroundBlur"></div>
+    <header class="showcase">
+        <div class="showcase_top">
+            <div class="left">
+                <img src="../../resources/images/logo/logo_01.png" alt="logo" class="log" onclick="gohome()" style="cursor:pointer">
+                <img src="../../resources/images/logo/logo_small.png" alt="logo" class="log_s" onclick="gohome()" style="cursor:pointer">
+                <div class="navs">
+                    <ul class="nav_list">
+                    <div class="home"><li><a href="./home-page.html">Home</a></li></div>
+                    <div class="services"><li><a href="./Services.html">Services</a></li></div>
+                    <div class="about_us"><li><a href="./About.html">About us</a></li></div>
+                    <div class="home"><li><a href="./contact.html">Contact us</a></li></div>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <div class="search">
+                    <div class="search-box" onmouseover="search_extend()" onmouseleave="search_shrink()" onkeyup="suggestion_small()">
+                        <input id="search_txt" class="search-txt" type="text" name="" placeholder="Type to search">
+                        <a class="search-btn" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="search-svg" fill="#fcc415"><path   d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg></a>
+                    </div>
+                    <div class="suggestion_box" ></div>
+                </div>
+            </div>
+            <div class="right">
+                <ul>
+                    <li>
+                        <div class="search-box" onmouseover="search_extend()" onmouseleave="search_shrink()" onkeyup="suggestion()">
+                            <input id="search_txt_large" class="search-txt" type="text" name="" placeholder="Type to search">
+                            <a class="search-btn" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="search-svg" fill="#fcc415"><path   d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg></a>
+                        </div>
+                        <div class="suggestion_box" id="sugg_box"></div>
+                    </li>
+                    
+                </ul>
+                <div id="logged_profile">
+                    <a href="./signup.html">Sign up</a>
+                    <a href="./loginPage.html">Log in</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div onclick="showCart()" id="cart" style="display: none;">
+        <img style="width: 100%;" src="../../resources/images/Cart-generic.svg" alt="Cart">
+    </div>
+    <div id="productCard"></div>
+    <div class="main-profile">
+        <div class="profile-info-cont">
+            <div  class="profile_pic">
+                <div id="profilePhoto" class="ImageContainer" style="height: 100%;">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="profile_det_cont">
+        <div class="profile_detail">
+            <ul class="profile_nav">
+                <li class="ebt active" onclick="toogleNavs('edit')">Edit Profile</li>
+                <li class="crbt" onclick="toogleNavs('create_post')">Create a post </li>
+                <!-- <li>Cart</li>
+                <li>Wishlist</li> -->
+            </ul> 
+        </div>
+        <div class="profile_detail_options">
+            <div class="Edit_pro">
+                <div class="edit_form">
+                    <h1>Edit profile</h1><br>
+                    <input type="text" name="" value="" placeholder="Firstname">
+                    <input type="text" name="" value="" placeholder="Lastname"><br>
+                    <input type="email" name="" value="" placeholder="Email">
+                    <input type="tel" name="" value="" placeholder="Phone"><br>
+                    <input type="password" name="" value="" placeholder="Password"><br>
+                    <input type="submit" name="" value="Update">
+                </div>
+            </div>
+            <div class="Create_post displayNone">
+                <div class="create_form">
+                    <h1>Post a product</h1><br>
+                    <div class="formContainer" style="
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    flex-wrap: wrap;">
+                        <form id="profileForm" style="  
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        gap: 22px;
+                      ">
+                            <input id="input__1" type="text" name="title" value="" placeholder="Title">
+                            <input id="input__2" type="text" name="Description" value="" placeholder="Description"><br>
+                            <input id="input__3" type="number" name="Price" value="" placeholder="Price" min="0">
+                            <input type="number" name="userId" id="uid" style="display: none;"><br><br>
+                            <input type="submit" name="submit" value="Post" style="
+                            border-radius: var(--loginBorderRadus);
+                            color: var(--loginSubmitColor);
+                            font-size: 15px;
+                            font-weight: 500;
+                            letter-spacing: 1px;
+                            text-transform: uppercase;
+                            cursor: pointer;
+                            background: var(--lightyellow);
+                            width: 100%;
+                            height: 35px;">
+                        </form>
+                        <div class="container">
+                            <div id="bgPhoto" class="wrapper">
+                                <div id="cancel-btn" style="position: absolute; top: 0; right: 0; width: 10%; margin: 10px; z-index: 2;">
+                                    <?xml version="1.0" encoding="iso-8859-1"?><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 496 496" style="enable-background:new 0 0 496 496;" xml:space="preserve"><path style="fill:#B5092B94;" d="M496,248c0,136.8-111.2,248-248,248S0,384.8,0,248S111.2,0,248,0S496,111.2,496,248z"/><path style="fill:#89002700;" d="M248,0c136.8,0,248,111.2,248,248S384.8,496,248,496"/><path style="fill:#883549B5;" d="M72.8,72.8c96.8-96.8,253.6-96.8,350.4,0s96.8,253.6,0,350.4"/><g><path style="fill:#EEFFFF;" d="M321.6,333.6c-3.2,0-5.6-0.8-8-3.2l-148-148c-4.8-4.8-4.8-12,0-16.8s12-4.8,16.8,0l148,148 c4.8,4.8,4.8,12,0,16.8C328,332.8,324.8,333.6,321.6,333.6z"/><path style="fill:#EEFFFF;" d="M174.4,333.6c-3.2,0-5.6-0.8-8-3.2c-4.8-4.8-4.8-12,0-16.8l148-148c4.8-4.8,12-4.8,16.8,0 s4.8,12,0,16.8l-148.8,148C180,332.8,176.8,333.6,174.4,333.6z"/></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
+                               </div>
+                               <div class="image" id="imagePreview">
+                                  <img id="photoToBeUploaded" src="" alt="">
+                               </div>
+                               <div class="content">
+                                  <div class="icon">
+                                  </div>
+                                  <div class="text">
+                                     No file chosen, yet!
+                                  </div>
+                               </div>
+                               
+                               <div class="file-name">
+                                  File name here
+                               </div>
+                            </div>
+                            <button onclick="defaultBtnActive()" id="custom-btn">Choose a file</button>
+                            <input id="default-btn" type="file" hidden>
+                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Cart_list">
+                <div class="cart">
+                    <span></span>
+                </div>
+            </div>
+            <div class="Wishlist">
+                <div class="wish">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../../resources/js/funcs.js"></script>
+<script src="https://code.iconify.design/2/2.2.0/iconify.min.js"></script>
+<script type="text/javascript" src="../../resources/js/main.js"></script>
+<script type="text/javascript">
+    function toogleNavs(type){
+        var editBut = document.getElementsByClassName("ebt")[0]
+        var postBut = document.getElementsByClassName("crbt")[0]
+        var editBox = document.getElementsByClassName("Edit_pro")[0]
+        var postBox = document.getElementsByClassName("Create_post")[0]
+        if(type=="edit"){
+            editBut.className="ebt active"
+            postBut.className="crbt"
+            editBox.className="Edit_pro displayBlock"
+            postBox.className="Create_post displayNone"
+        }
+        else if(type=="create_post"){
+            editBut.className="ebt"
+            postBut.className="crbt active"
+            editBox.className="Edit_pro displayNone"
+            postBox.className="Create_post displayBlock"
+        }
+    }
+    var uid = "0"
+    function profileImage() {
+        uid = (check_cookie_name("loginData")).uid
+        return `../../resources/usersData/${uid}/profile/profile.png`
+    }
+
+    var image = profileImage();
+
+    document.getElementById("profilePhoto").innerHTML=`<img src=${image} alt="profile" style="height: 100%; width: 100%; object-fit: cover;">`
+    const wrapper = document.querySelector(".wrapper");
+    const fileName = document.querySelector(".file-name");
+    const defaultBtn = document.querySelector("#default-btn");
+    const customBtn = document.querySelector("#custom-btn");
+    const cancelBtn = document.querySelector("#cancel-btn");
+    const img = document.getElementById("photoToBeUploaded");
+    let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
+    function defaultBtnActive(){
+    defaultBtn.click();
+    }
+    defaultBtn.addEventListener("change", function(){
+        const file = this.files[0];
+        if(file){
+            const reader = new FileReader();
+            reader.onload = function(){
+            const result = reader.result;
+            img.src = result;
+            wrapper.classList.add("active");
+            document.getElementById("bgPhoto").style.cssText=`background: url(../../resources/images/bg01.jpg);`
+            }
+            cancelBtn.addEventListener("click", function(){
+            img.src = "";
+            wrapper.classList.remove("active");
+            document.getElementById("bgPhoto").style.cssText=`background: var(--cardTextSize);`
+            })
+            reader.readAsDataURL(file);
+        }
+        if(this.value){
+            let valueStore = this.value.match(regExp);
+            fileName.textContent = valueStore;
+        }
+    });
+    function checkForm(id) {
+        var formInput = document.getElementById(id).value;
+        // console.log(formInput)
+        if(formInput==""){
+            document.getElementById(id).style.cssText=`border: 2px solid #ff000094;`
+            return false
+        }
+        else {
+            document.getElementById(id).style.cssText=`border: none;`
+            return true;
+        }
+    }
+    function ErrorMessage(){
+        for (var i=1; i<=3; i++) if (!checkForm(`input__${i}`)) return false
+        return true
+    }
+    const proForm  = document.getElementById('profileForm')
+    proForm.addEventListener('submit', e => {
+        var userid = document.getElementById("uid")
+        if ((check_cookie_name("loginData")).exist) userid.value = `${uid}`
+        var formData = new FormData(proForm)
+        var file = document.getElementById("default-btn")
+        if(file.files[0]) formData.append("productPhoto", file.files[0])
+        e.preventDefault()
+        if (ErrorMessage() && (file.files[0])) sendInfo()
+        async function sendInfo() {
+            loading("addLoad")
+            var response = await fetch ( "../api/uploadProduct.php", {
+            method: 'POST',
+            body: formData
+            }).then(res => res.json()).then(response => response)
+            loading("remove")
+            console.log(response)
+            if (response.complete) {
+            // window.alert("Successfully Registered")
+            errorHand({type: "success", message: "Successfully Uploaded"})
+            document.location.href = "./home-page.html"
+            }
+            else {
+            // window.alert("Error: product not uploaded")
+            errorHand({type:"error", message: "Product is not uploaded"});
+            }
+        }
+    })
+</script>
+</html>
